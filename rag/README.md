@@ -1,6 +1,4 @@
-\# Travel RAG Module
-
-
+# Travel RAG Module
 
 <p align="left">
 
@@ -16,21 +14,14 @@
 
 </p>
 
-
-
 This module implements the Retrieval-Augmented Generation (RAG) layer for a travel-focused AI agent. It is responsible for collecting curated travel content, transforming it into structured documents, splitting content into semantically meaningful sections, generating embeddings, and storing the resulting chunks in a Chroma vector database for retrieval at runtime.
-
-
-
 The design separates offline indexing from online retrieval. This makes the system easier to maintain, extend, and integrate into larger agentic workflows.
-
-
 
 \---
 
 
 
-\## Table of Contents
+## Table of Contents
 
 
 
@@ -62,7 +53,7 @@ The design separates offline indexing from online retrieval. This makes the syst
 
 
 
-\## Overview
+## Overview
 
 
 
@@ -78,7 +69,7 @@ At runtime, the retrieval service performs similarity search and can optionally 
 
 
 
-\## What This Module Does
+## What This Module Does
 
 
 
@@ -100,7 +91,7 @@ At runtime, the retrieval service performs similarity search and can optionally 
 
 
 
-\## Architecture
+## Architecture
 
 
 
@@ -152,7 +143,7 @@ TravelRAGService
 
 
 
-\## Data Sources
+## Data Sources
 
 
 
@@ -192,7 +183,7 @@ This approach ensures:
 
 
 
-\## Project Structure
+## Project Structure
 
 
 
@@ -216,7 +207,7 @@ rag/
 
 
 
-\### File Responsibilities
+### File Responsibilities
 
 
 
@@ -236,11 +227,11 @@ rag/
 
 
 
-\## How the Pipeline Works
+## How the Pipeline Works
 
 
 
-\### 1. Ingestion
+### 1. Ingestion
 
 
 
@@ -248,7 +239,7 @@ Content is collected from a curated registry. Each source-specific ingestor fetc
 
 
 
-\### 2. Cleaning
+### 2. Cleaning
 
 
 
@@ -256,7 +247,7 @@ Text is normalized to remove noise such as extra whitespace and formatting incon
 
 
 
-\### 3. Semantic Sectioning
+### 3. Semantic Sectioning
 
 
 
@@ -264,7 +255,7 @@ Documents are split into logical sections using heading-based heuristics instead
 
 
 
-\### 4. Chunking
+### 4. Chunking
 
 
 
@@ -272,7 +263,7 @@ Each section is broken into smaller chunks suitable for embedding, while preserv
 
 
 
-\### 5. Embedding \& Indexing
+### 5. Embedding \& Indexing
 
 
 
@@ -280,7 +271,7 @@ Chunks are embedded using OpenAI embeddings and stored in a Chroma vector databa
 
 
 
-\### 6. Retrieval
+### 6. Retrieval
 
 
 
@@ -292,7 +283,7 @@ Similarity search retrieves relevant chunks based on user queries, optionally fi
 
 
 
-\## Installation
+## Installation
 
 
 
@@ -332,11 +323,11 @@ $env:OPENAI\_API\_KEY="your\_api\_key"
 
 
 
-\## Usage
+## Usage
 
 
 
-\### Build the Index
+### Build the Index
 
 
 
@@ -366,7 +357,7 @@ This will:
 
 
 
-\### Query the RAG Service
+### Query the RAG Service
 
 
 
@@ -414,7 +405,7 @@ print(result)
 
 
 
-\## Retrieval Layer
+## Retrieval Layer
 
 
 
@@ -426,7 +417,7 @@ The retrieval layer wraps vector similarity search and formats results with sour
 
 
 
-\## Design Notes
+## Design Notes
 
 
 
@@ -446,7 +437,7 @@ The retrieval layer wraps vector similarity search and formats results with sour
 
 
 
-\## Future Improvements
+## Future Improvements
 
 
 
@@ -466,7 +457,7 @@ The retrieval layer wraps vector similarity search and formats results with sour
 
 
 
-\## Author
+## Author
 
 
 
