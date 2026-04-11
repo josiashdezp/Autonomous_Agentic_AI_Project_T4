@@ -1,0 +1,34 @@
+# Environment variables — NEVER commit this
+.env
+.env.local
+.env.*.local
+
+# ChromaDB vector store (auto-rebuilds on first run)
+data/chroma_db/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
