@@ -1,0 +1,1331 @@
+﻿{
+    "version":  2,
+    "base_path":  "data/opentraveldata",
+    "delimiter_default":  "^",
+    "aliases":  {
+                    "airlines":  "optd_airlines.csv",
+                    "airports":  "optd_por_public.csv",
+                    "cities":  "optd_por_public.csv",
+                    "por":  "optd_por_public.csv",
+                    "countries":  "optd_countries.csv",
+                    "regions":  "optd_regions.csv",
+                    "region_details":  "optd_region_details.csv",
+                    "aircraft":  "optd_aircraft.csv",
+                    "airport_popularity":  "ref_airport_popularity.csv",
+                    "airport_pagerank":  "ref_airport_pageranked.csv",
+                    "airline_best_known":  "optd_airline_best_known_so_far.csv",
+                    "airline_alliance_membership":  "optd_airline_alliance_membership.csv"
+                },
+    "datasets":  [
+                     {
+                         "name":  "optd_region_0001_geonames.csv",
+                         "path":  "curated/regions/optd_region_0001_geonames.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "region_code",
+                                         "env_id",
+                                         "date_from",
+                                         "date_to",
+                                         "region_name",
+                                         "region_id",
+                                         "sub_region_code",
+                                         "sub_region_name",
+                                         "sub_region_id",
+                                         "wiki_link",
+                                         "alt_name_list",
+                                         "country_code_list"
+                                     ],
+                         "bytes":  361,
+                         "last_modified":  "2026-04-11T11:42:27.8480000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "regions"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_region_0002_unwto.csv",
+                         "path":  "curated/regions/optd_region_0002_unwto.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "region_code",
+                                         "env_id",
+                                         "date_from",
+                                         "date_to",
+                                         "region_name",
+                                         "region_id",
+                                         "sub_region_code",
+                                         "sub_region_name",
+                                         "sub_region_id",
+                                         "wiki_link",
+                                         "alt_name_list",
+                                         "country_code_list"
+                                     ],
+                         "bytes":  1029,
+                         "last_modified":  "2026-04-11T11:42:27.8700000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "regions"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_aircraft.csv",
+                         "path":  "optd_aircraft.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "iata_code",
+                                         "manufacturer",
+                                         "model",
+                                         "iata_group",
+                                         "iata_category",
+                                         "icao_code",
+                                         "nb_engines",
+                                         "aircraft_type"
+                                     ],
+                         "bytes":  19790,
+                         "last_modified":  "2026-04-11T11:42:27.9670000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "aircraft"
+                                  ],
+                         "readme_excerpt":  "* [``optd_aircraft.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_aircraft.csv)\\n  is the list of best known details for aircraft.\\n\\n\\n# Format Details\\n\\n## US DOT World Area Codes (WAC)"
+                     },
+                     {
+                         "name":  "optd_airline_alliance_membership.csv",
+                         "path":  "optd_airline_alliance_membership.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "alliance_name",
+                                         "alliance_type",
+                                         "airline_iata_code_2c",
+                                         "airline_name",
+                                         "from_date",
+                                         "to_date",
+                                         "env_id"
+                                     ],
+                         "bytes":  6036,
+                         "last_modified":  "2026-04-11T11:42:27.9850000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "airlines"
+                                  ],
+                         "readme_excerpt":  "* [``optd_airline_alliance_membership.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_airline_alliance_membership.csv)\\n  is the list of best known airline alliance membership details.\\n* [``optd_airline_no_longer_valid.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_airline_no_longer_valid.csv)\\n  is the list of airlines no longer having a valid IATA 2-letter or\\n  ICAO 3-letter code.\\n  Those airlines may still operate, but not with the same IATA or ICAO code.\\n  A primary key, usually formed from its original name and a version number,"
+                     },
+                     {
+                         "name":  "optd_airline_best_known_so_far.csv",
+                         "path":  "optd_airline_best_known_so_far.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "pk",
+                                         "env_id",
+                                         "validity_from",
+                                         "validity_to",
+                                         "3char_code",
+                                         "2char_code",
+                                         "num_code",
+                                         "name",
+                                         "name2",
+                                         "alliance_code",
+                                         "alliance_status",
+                                         "type",
+                                         "wiki_link",
+                                         "alt_names",
+                                         "bases",
+                                         "key",
+                                         "version",
+                                         "parent_pk_list"
+                                     ],
+                         "bytes":  178848,
+                         "last_modified":  "2026-04-11T11:42:28.0060000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "airlines"
+                                  ],
+                         "readme_excerpt":  "* [``optd_airline_best_known_so_far.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_airline_best_known_so_far.csv)\\n  is the list of best known details for the airlines.\\n* [``optd_airline_alliance_membership.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_airline_alliance_membership.csv)\\n  is the list of best known airline alliance membership details.\\n* [``optd_airline_no_longer_valid.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_airline_no_longer_valid.csv)\\n  is the list of airlines no longer having a valid IATA 2-letter or\\n  ICAO 3-letter code."
+                     },
+                     {
+                         "name":  "optd_airline_diff_w_alc.csv",
+                         "path":  "optd_airline_diff_w_alc.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+
+                                     ],
+                         "bytes":  0,
+                         "last_modified":  "2026-04-11T11:42:28.0170000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "airlines"
+                                  ],
+                         "readme_excerpt":  "* [``optd_airline_diff_w_alc.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_airline_diff_w_alc.csv)\\n  is the list of the differences of airline names,\\n  as on one hand in\\n  [``optd_airline_best_known_so_far.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_airline_best_known_so_far.csv),\\n  and on the other hand in\\n  [``optd_airline_alliance_membership.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_airline_alliance_membership.csv).\\n  Someone should go through that list, check it item by item, and amend"
+                     },
+                     {
+                         "name":  "optd_airline_diff_w_ref.csv",
+                         "path":  "optd_airline_diff_w_ref.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "code",
+                                         "name_version",
+                                         "name_optd",
+                                         "name_ref"
+                                     ],
+                         "bytes":  48734,
+                         "last_modified":  "2026-04-11T11:42:28.0350000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "airlines"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_airline_no_longer_valid.csv",
+                         "path":  "optd_airline_no_longer_valid.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "pk",
+                                         "env_id",
+                                         "validity_from",
+                                         "validity_to",
+                                         "3char_code",
+                                         "2char_code",
+                                         "num_code",
+                                         "name",
+                                         "name2",
+                                         "alliance_code",
+                                         "alliance_status",
+                                         "type",
+                                         "wiki_link",
+                                         "alt_names",
+                                         "bases",
+                                         "key",
+                                         "version",
+                                         "parent_pk_list"
+                                     ],
+                         "bytes":  73612,
+                         "last_modified":  "2026-04-11T11:42:28.0500000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "airlines"
+                                  ],
+                         "readme_excerpt":  "* [``optd_airline_no_longer_valid.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_airline_no_longer_valid.csv)\\n  is the list of airlines no longer having a valid IATA 2-letter or\\n  ICAO 3-letter code.\\n  Those airlines may still operate, but not with the same IATA or ICAO code.\\n  A primary key, usually formed from its original name and a version number,\\n  allows to track the full history along the time of any given airline.\\n  But, to be honest, those files still need a lot of curation. They are"
+                     },
+                     {
+                         "name":  "optd_airline_por.csv",
+                         "path":  "optd_airline_por.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "airline_code",
+                                         "apt_org",
+                                         "apt_dst",
+                                         "flt_freq"
+                                     ],
+                         "bytes":  1430998,
+                         "last_modified":  "2026-04-11T11:42:28.0780000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "airlines"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_airline_por_rcld.csv",
+                         "path":  "optd_airline_por_rcld.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "airline_code",
+                                         "apt_org",
+                                         "apt_dst",
+                                         "seats_mtly_avg",
+                                         "freq_mtly_avg"
+                                     ],
+                         "bytes":  2419880,
+                         "last_modified":  "2026-04-11T11:42:28.1140000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "airlines"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_airlines.csv",
+                         "path":  "optd_airlines.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "pk",
+                                         "env_id",
+                                         "validity_from",
+                                         "validity_to",
+                                         "3char_code",
+                                         "2char_code",
+                                         "num_code",
+                                         "name",
+                                         "name2",
+                                         "alliance_code",
+                                         "alliance_status",
+                                         "type",
+                                         "wiki_link",
+                                         "flt_freq",
+                                         "alt_names",
+                                         "bases",
+                                         "key",
+                                         "version",
+                                         "parent_pk_list",
+                                         "successor_pk_list"
+                                     ],
+                         "bytes":  259770,
+                         "last_modified":  "2026-04-11T11:42:28.1360000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "airlines"
+                                  ],
+                         "readme_excerpt":  "* [``optd_airlines.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_airlines.csv)\\n  is the main airline details data file, meant to be used by everyone,\\n  with all the details.\\n\\n\\n# Aircraft\\n"
+                     },
+                     {
+                         "name":  "optd_airlines_websites.csv",
+                         "path":  "optd_airlines_websites.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "pk",
+                                         "2char_code",
+                                         "name",
+                                         "website"
+                                     ],
+                         "bytes":  59852,
+                         "last_modified":  "2026-04-11T11:42:28.1590000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "airlines"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_airlines_websites_wkdt.csv",
+                         "path":  "optd_airlines_websites_wkdt.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "3char_code",
+                                         "2char_code",
+                                         "name",
+                                         "website",
+                                         "logo"
+                                     ],
+                         "bytes":  215740,
+                         "last_modified":  "2026-04-11T11:42:46.3690000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "airlines"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_cont.csv",
+                         "path":  "optd_cont.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "country_code",
+                                         "country_name",
+                                         "continent_code",
+                                         "continent_name"
+                                     ],
+                         "bytes":  6684,
+                         "last_modified":  "2026-04-11T11:42:46.3900000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "continents"
+                                  ],
+                         "readme_excerpt":  "and [``optd_cont.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_cont.csv)\\n  are the lists of countries, with their associated details.\\n  Those are generated from Geonames.\\n  Note that there is no script to generate those files yet. As a matter of\\n  fact, those two files should be replaced by\\n  [``optd_countries.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_countries.csv).\\n* [``optd_por_diff_w_geonames.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_diff_w_geonames.csv)"
+                     },
+                     {
+                         "name":  "optd_countries.csv",
+                         "path":  "optd_countries.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "iso_2char_code",
+                                         "iso_3char_code",
+                                         "iso_num_code",
+                                         "fips",
+                                         "name",
+                                         "cptl",
+                                         "area",
+                                         "pop",
+                                         "cont_code",
+                                         "tld",
+                                         "ccy_code",
+                                         "ccy_name",
+                                         "tel_pfx",
+                                         "zip_fmt",
+                                         "lang_code_list",
+                                         "geo_id",
+                                         "ngbr_ctry_code_list"
+                                     ],
+                         "bytes":  26142,
+                         "last_modified":  "2026-04-11T11:42:46.4110000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "countries"
+                                  ],
+                         "readme_excerpt":  "* [``optd_countries.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_countries.csv)\\n  is a format translation from the Geonames country information data file:\\n  http://download.geonames.org/export/dump/countryInfo.txt\\n* [``optd_por_public_all.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_public_all.csv)\\n  is the main POR data file, meant to be used by everyone, with all the details.\\n  That data file contains around 120,000 entries as of October 2018,\\n  including around 20,000 POR referenced by a IATA code."
+                     },
+                     {
+                         "name":  "optd_country_region_info.csv",
+                         "path":  "optd_country_region_info.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "country_code",
+                                         "country_name",
+                                         "schengen",
+                                         "schengen_from",
+                                         "schengen_to",
+                                         "region_unwto_code",
+                                         "region_unwto_numeric",
+                                         "region_unwto_name",
+                                         "subregion_unwto_code",
+                                         "subregion_unwto_name",
+                                         "region_iatassim_code",
+                                         "region_iatassim_name",
+                                         "region_iatawats_code",
+                                         "region_iatawats_name"
+                                     ],
+                         "bytes":  20816,
+                         "last_modified":  "2026-04-11T11:42:46.4320000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "countries"
+                                  ],
+                         "readme_excerpt":  "* [``optd_country_region_info.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_country_region_info.csv)\\n  and [``optd_cont.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_cont.csv)\\n  are the lists of countries, with their associated details.\\n  Those are generated from Geonames.\\n  Note that there is no script to generate those files yet. As a matter of\\n  fact, those two files should be replaced by\\n  [``optd_countries.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_countries.csv)."
+                     },
+                     {
+                         "name":  "optd_country_states.csv",
+                         "path":  "optd_country_states.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "ctry_code",
+                                         "geo_id",
+                                         "adm1_code",
+                                         "name_en",
+                                         "iso31662",
+                                         "abbr"
+                                     ],
+                         "bytes":  16740,
+                         "last_modified":  "2026-04-11T11:42:46.4520000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "countries"
+                                  ],
+                         "readme_excerpt":  "* [``optd_country_states.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_country_states.csv)\\n  is the mapping between [Geonames administrative-level 1 (ADM1) codes](http://download.geonames.org/export/dump/admin1CodesASCII.txt)\\n  and [ISO-3166:2 codes](http://en.wikipedia.org/wiki/ISO_3166-2).\\n* [``optd_state_exceptions.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_state_exceptions.csv)\\n  is the list of exception rules specifying which regions IATA does not correctly\\n  reference. That is for instance used by the\\n  [`check-por-cmp-optd-it.py` checker script](http://github.com/opentraveldata/quality-assurance/blob/master/checkers/check-por-cmp-optd-it.py)."
+                     },
+                     {
+                         "name":  "optd_por_best_known_so_far.csv",
+                         "path":  "optd_por_best_known_so_far.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "pk",
+                                         "iata_code",
+                                         "latitude",
+                                         "longitude",
+                                         "city_code",
+                                         "date_from"
+                                     ],
+                         "bytes":  841961,
+                         "last_modified":  "2026-04-11T11:42:46.4830000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  "* [``optd_por_best_known_so_far.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_best_known_so_far.csv)\\n  is the list of best known details\\n  for the Points of Reference (POR), for geographical coordinates,\\n  serving city and Geonames reference.\\n  * Those are referenced by IATA (they all have a IATA code).\\n\tAs of August 2018, there are around 20,000 POR referenced by IATA.\\n\tNote that most of the IATA codes reference several distinct POR,"
+                     },
+                     {
+                         "name":  "optd_por_best_to_reject.csv",
+                         "path":  "optd_por_best_to_reject.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "DAW-CA"
+                                     ],
+                         "bytes":  1288,
+                         "last_modified":  "2026-04-11T11:42:46.5200000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  "* [``optd_por_best_to_reject.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_best_to_reject.csv)\\n  is the list of POR not referenced by IATA.\\n  A typical use case is when the FAA code has been taken for the IATA code,\\n  for instance with [``DAW``, as of August 2018](http://geonames.org/5092710).\\n  Someone should go through that list, check it item by item, and amend\\n  the corresponding records, usually in Geonames, where the mistake has been\\n  done in the first place. IATA may be the culprit in some other cases."
+                     },
+                     {
+                         "name":  "optd_por_diff_w_geonames.csv",
+                         "path":  "optd_por_diff_w_geonames.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "dep_city",
+                                         "distance",
+                                         "page_rank",
+                                         "dist_weighted_by_page_rank"
+                                     ],
+                         "bytes":  20736,
+                         "last_modified":  "2026-04-11T11:42:46.5400000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  "* [``optd_por_diff_w_geonames.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_diff_w_geonames.csv)\\n  is the list of geographical distances for the POR,\\n  as known from [``optd_por_best_known_so_far.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_best_known_so_far.csv)\\n  on one hand,\\n  and as known by Geonames on the other hand.\\n  Someone should go through that list, check it item by item, and amend\\n  the corresponding records, usually in"
+                     },
+                     {
+                         "name":  "optd_por_exceptions.csv",
+                         "path":  "optd_por_exceptions.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "por_code",
+                                         "source",
+                                         "actv_in_optd",
+                                         "actv_in_src",
+                                         "env_id",
+                                         "date_from",
+                                         "date_to",
+                                         "city_code",
+                                         "state_code",
+                                         "reason_code",
+                                         "comment"
+                                     ],
+                         "bytes":  18166,
+                         "last_modified":  "2026-04-11T11:42:46.5600000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  "* [``optd_por_exceptions.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_exceptions.csv)\\n  is a list of exception rules at POR level.\\n\\n   * There are various types of rules. Mainly, those rules refer to known\\n     cases where the active status (whether or not a POR is still\\n\t referenced/active) is not consistent between OPTD and another source;\\n\t that latter is specified in the `source` field (_e.g._, `O` means OPTD"
+                     },
+                     {
+                         "name":  "optd_por_no_geonames.csv",
+                         "path":  "optd_por_no_geonames.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "iata_code",
+                                         "icao_code",
+                                         "faa_code",
+                                         "is_geonames",
+                                         "geoname_id",
+                                         "envelope_id",
+                                         "name",
+                                         "asciiname",
+                                         "latitude",
+                                         "longitude",
+                                         "fclass",
+                                         "fcode",
+                                         "page_rank",
+                                         "date_from",
+                                         "date_until",
+                                         "comment",
+                                         "country_code",
+                                         "cc2",
+                                         "country_name",
+                                         "continent_name",
+                                         "adm1_code",
+                                         "adm1_name_utf",
+                                         "adm1_name_ascii",
+                                         "adm2_code",
+                                         "adm2_name_utf",
+                                         "adm2_name_ascii",
+                                         "adm3_code",
+                                         "adm4_code",
+                                         "population",
+                                         "elevation",
+                                         "gtopo30",
+                                         "timezone",
+                                         "gmt_offset",
+                                         "dst_offset",
+                                         "raw_offset",
+                                         "moddate",
+                                         "city_code_list",
+                                         "city_name_list",
+                                         "city_detail_list",
+                                         "tvl_por_list",
+                                         "state_code",
+                                         "location_type",
+                                         "wiki_link",
+                                         "alt_name_section",
+                                         "wac",
+                                         "wac_name",
+                                         "ccy_code",
+                                         "unlc_list",
+                                         "uic_list",
+                                         "geoname_lat",
+                                         "geoname_lon"
+                                     ],
+                         "bytes":  141489,
+                         "last_modified":  "2026-04-11T11:42:46.5790000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_por_no_longer_valid.csv",
+                         "path":  "optd_por_no_longer_valid.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "iata_code",
+                                         "icao_code",
+                                         "faa_code",
+                                         "is_geonames",
+                                         "geoname_id",
+                                         "envelope_id",
+                                         "name",
+                                         "asciiname",
+                                         "latitude",
+                                         "longitude",
+                                         "fclass",
+                                         "fcode",
+                                         "page_rank",
+                                         "date_from",
+                                         "date_until",
+                                         "comment",
+                                         "country_code",
+                                         "cc2",
+                                         "country_name",
+                                         "continent_name",
+                                         "adm1_code",
+                                         "adm1_name_utf",
+                                         "adm1_name_ascii",
+                                         "adm2_code",
+                                         "adm2_name_utf",
+                                         "adm2_name_ascii",
+                                         "adm3_code",
+                                         "adm4_code",
+                                         "population",
+                                         "elevation",
+                                         "gtopo30",
+                                         "timezone",
+                                         "gmt_offset",
+                                         "dst_offset",
+                                         "raw_offset",
+                                         "moddate",
+                                         "city_code_list",
+                                         "city_name_list",
+                                         "city_detail_list|country_code|state_code",
+                                         "tvl_por_list",
+                                         "state_code",
+                                         "location_type",
+                                         "wiki_link",
+                                         "alt_name_section",
+                                         "wac",
+                                         "wac_name",
+                                         "ccy_code",
+                                         "unlc_list",
+                                         "uic_list",
+                                         "geoname_lat",
+                                         "geoname_lon"
+                                     ],
+                         "bytes":  402109,
+                         "last_modified":  "2026-04-11T11:42:46.8390000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  "* [``optd_por_no_longer_valid.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_no_longer_valid.csv)\\n  is the list of no longer valid POR.\\n  * In other words, those POR were once referenced by IATA, but it is no longer\\n    the case. Normally, validity dates are specified, so that a single POR\\n    is referenced at any given time by IATA. Examples of change of referencing\\n    are when a new airport is built and the operations are transfered to the\\n    new airport."
+                     },
+                     {
+                         "name":  "optd_por_population.csv",
+                         "path":  "optd_por_population.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "iata_code",
+                                         "name",
+                                         "country_code",
+                                         "population",
+                                         "http://geonames.org/geoname_id"
+                                     ],
+                         "bytes":  3424536,
+                         "last_modified":  "2026-04-11T11:42:46.8980000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_por_public.csv",
+                         "path":  "optd_por_public.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "iata_code",
+                                         "icao_code",
+                                         "faa_code",
+                                         "is_geonames",
+                                         "geoname_id",
+                                         "envelope_id",
+                                         "name",
+                                         "asciiname",
+                                         "latitude",
+                                         "longitude",
+                                         "fclass",
+                                         "fcode",
+                                         "page_rank",
+                                         "date_from",
+                                         "date_until",
+                                         "comment",
+                                         "country_code",
+                                         "cc2",
+                                         "country_name",
+                                         "continent_name",
+                                         "adm1_code",
+                                         "adm1_name_utf",
+                                         "adm1_name_ascii",
+                                         "adm2_code",
+                                         "adm2_name_utf",
+                                         "adm2_name_ascii",
+                                         "adm3_code",
+                                         "adm4_code",
+                                         "population",
+                                         "elevation",
+                                         "gtopo30",
+                                         "timezone",
+                                         "gmt_offset",
+                                         "dst_offset",
+                                         "raw_offset",
+                                         "moddate",
+                                         "city_code_list",
+                                         "city_name_list",
+                                         "city_detail_list",
+                                         "tvl_por_list",
+                                         "iso31662",
+                                         "location_type",
+                                         "wiki_link",
+                                         "alt_name_section",
+                                         "wac",
+                                         "wac_name",
+                                         "ccy_code",
+                                         "unlc_list",
+                                         "uic_list",
+                                         "geoname_lat",
+                                         "geoname_lon"
+                                     ],
+                         "bytes":  12732947,
+                         "last_modified":  "2026-04-11T11:42:46.9840000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  "* [``optd_por_public.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_public_all.csv)\\n  is a sub-set of [``optd_por_public_all.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_public_all.csv),\\n  described just above, and is made of only the POR referenced by a IATA code.\\n  It has been kept for backward compatibility reasons, though one can easily\\n  derive it from the bigger data file.\\n\\n## Mixed"
+                     },
+                     {
+                         "name":  "optd_por_public_all.csv",
+                         "path":  "optd_por_public_all.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "iata_code",
+                                         "icao_code",
+                                         "faa_code",
+                                         "is_geonames",
+                                         "geoname_id",
+                                         "envelope_id",
+                                         "name",
+                                         "asciiname",
+                                         "latitude",
+                                         "longitude",
+                                         "fclass",
+                                         "fcode",
+                                         "page_rank",
+                                         "date_from",
+                                         "date_until",
+                                         "comment",
+                                         "country_code",
+                                         "cc2",
+                                         "country_name",
+                                         "continent_name",
+                                         "adm1_code",
+                                         "adm1_name_utf",
+                                         "adm1_name_ascii",
+                                         "adm2_code",
+                                         "adm2_name_utf",
+                                         "adm2_name_ascii",
+                                         "adm3_code",
+                                         "adm4_code",
+                                         "population",
+                                         "elevation",
+                                         "gtopo30",
+                                         "timezone",
+                                         "gmt_offset",
+                                         "dst_offset",
+                                         "raw_offset",
+                                         "moddate",
+                                         "city_code_list",
+                                         "city_name_list",
+                                         "city_detail_list",
+                                         "tvl_por_list",
+                                         "iso31662",
+                                         "location_type",
+                                         "wiki_link",
+                                         "alt_name_section",
+                                         "wac",
+                                         "wac_name",
+                                         "ccy_code",
+                                         "unlc_list",
+                                         "uic_list",
+                                         "geoname_lat",
+                                         "geoname_lon"
+                                     ],
+                         "bytes":  50603489,
+                         "last_modified":  "2026-04-11T11:42:47.2290000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  "* [``optd_por_public_all.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_public_all.csv)\\n  is the main POR data file, meant to be used by everyone, with all the details.\\n  That data file contains around 120,000 entries as of October 2018,\\n  including around 20,000 POR referenced by a IATA code.\\n* [``optd_por_public.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_public_all.csv)\\n  is a sub-set of [``optd_por_public_all.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_public_all.csv),\\n  described just above, and is made of only the POR referenced by a IATA code."
+                     },
+                     {
+                         "name":  "optd_por_ref.csv",
+                         "path":  "optd_por_ref.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "iata_code",
+                                         "loc_type",
+                                         "cty_code",
+                                         "state_code",
+                                         "ctry_code",
+                                         "lat",
+                                         "lon"
+                                     ],
+                         "bytes":  350637,
+                         "last_modified":  "2026-04-11T11:42:47.2550000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_por_tz.csv",
+                         "path":  "optd_por_tz.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "iata_code",
+                                         "tz"
+                                     ],
+                         "bytes":  12333,
+                         "last_modified":  "2026-04-11T11:42:47.2730000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  "* [``optd_por_tz.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_tz.csv)\\n  is the list of time-zones for IATA codes, for which the Geonames ID have\\n  not been known (or existing) so far. As soon as corresponding POR\\n  are referenced in the\\n  [``optd_por_best_known_so_far.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_best_known_so_far.csv),\\n  the corresponding entries should be removed from\\n  [``optd_por_tz.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_por_tz.csv)."
+                     },
+                     {
+                         "name":  "optd_por_tz_wrong.csv",
+                         "path":  "optd_por_tz_wrong.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "iata_code",
+                                         "loc_type",
+                                         "por_name",
+                                         "por_name2",
+                                         "por_name3",
+                                         "por_name4",
+                                         "cty_name",
+                                         "cty_code",
+                                         "is_apt",
+                                         "state_code",
+                                         "ctry_code",
+                                         "rgn_code",
+                                         "cnt_code",
+                                         "tz_grp",
+                                         "lat",
+                                         "lon",
+                                         "nmc_code",
+                                         "is_cml"
+                                     ],
+                         "bytes":  154,
+                         "last_modified":  "2026-04-11T11:42:47.2920000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_por_unlc.csv",
+                         "path":  "optd_por_unlc.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "unlocode",
+                                         "latitude",
+                                         "longitude",
+                                         "geonames_id",
+                                         "iso31662_code",
+                                         "iso31662_name",
+                                         "feat_class",
+                                         "feat_code"
+                                     ],
+                         "bytes":  5068932,
+                         "last_modified":  "2026-04-11T11:42:47.3510000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_por_wrong_icao.csv",
+                         "path":  "optd_por_wrong_icao.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "iata_code",
+                                         "icao_code",
+                                         "faa_code",
+                                         "is_geonames",
+                                         "geoname_id",
+                                         "envelope_id",
+                                         "name",
+                                         "asciiname",
+                                         "latitude",
+                                         "longitude",
+                                         "fclass",
+                                         "fcode",
+                                         "page_rank",
+                                         "date_from",
+                                         "date_until",
+                                         "comment",
+                                         "country_code",
+                                         "cc2",
+                                         "country_name",
+                                         "continent_name",
+                                         "adm1_code",
+                                         "adm1_name_utf",
+                                         "adm1_name_ascii",
+                                         "adm2_code",
+                                         "adm2_name_utf",
+                                         "adm2_name_ascii",
+                                         "adm3_code",
+                                         "adm4_code",
+                                         "population",
+                                         "elevation",
+                                         "gtopo30",
+                                         "timezone",
+                                         "gmt_offset",
+                                         "dst_offset",
+                                         "raw_offset",
+                                         "moddate",
+                                         "city_code_list",
+                                         "city_name_list",
+                                         "city_detail_list",
+                                         "tvl_por_list",
+                                         "iso31662",
+                                         "location_type",
+                                         "wiki_link",
+                                         "alt_name_section",
+                                         "wac",
+                                         "wac_name",
+                                         "ccy_code",
+                                         "unlc_list",
+                                         "uic_list",
+                                         "geoname_lat",
+                                         "geoname_lon"
+                                     ],
+                         "bytes":  78772,
+                         "last_modified":  "2026-04-11T11:42:47.4020000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_region_details.csv",
+                         "path":  "optd_region_details.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "user",
+                                         "region_code",
+                                         "region_name",
+                                         "region_id",
+                                         "sub_region_code",
+                                         "sub_region_name",
+                                         "country_name",
+                                         "user_country_code_1",
+                                         "user_country_code_2",
+                                         "country_code_iso_2char"
+                                     ],
+                         "bytes":  14525,
+                         "last_modified":  "2026-04-11T11:42:47.4180000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "regions"
+                                  ],
+                         "readme_excerpt":  "and [``optd_region_details.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_region_details.csv)\\n  are the list of regions and sub-regions from various projects\\n  or institutions (UN WTO, Geonames), which are called \"users\" here.\\n  The whole idea is that each user may specify different list of countries\\n  and their associated details. For instance, some users will have Australia\\n  part of Asia, while other users will consider that Australia is a continent\\n  in itself. Some users will consider that Kosovo is an independent country,"
+                     },
+                     {
+                         "name":  "optd_regions.csv",
+                         "path":  "optd_regions.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "user",
+                                         "region_code",
+                                         "region_name",
+                                         "region_id"
+                                     ],
+                         "bytes":  385,
+                         "last_modified":  "2026-04-11T11:42:47.4390000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "regions"
+                                  ],
+                         "readme_excerpt":  "* [``optd_regions.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_regions.csv)\\n  and [``optd_region_details.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_region_details.csv)\\n  are the list of regions and sub-regions from various projects\\n  or institutions (UN WTO, Geonames), which are called \"users\" here.\\n  The whole idea is that each user may specify different list of countries\\n  and their associated details. For instance, some users will have Australia\\n  part of Asia, while other users will consider that Australia is a continent"
+                     },
+                     {
+                         "name":  "optd_sched_exceptions.csv",
+                         "path":  "optd_sched_exceptions.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "airline_code",
+                                         "por_issue",
+                                         "por_base",
+                                         "env_id",
+                                         "date_from",
+                                         "date_to",
+                                         "comment"
+                                     ],
+                         "bytes":  660,
+                         "last_modified":  "2026-04-11T11:42:47.4570000-05:00",
+                         "tags":  [
+                                      "opentraveldata"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_state_exceptions.csv",
+                         "path":  "optd_state_exceptions.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "pk",
+                                         "state_code",
+                                         "geo_id",
+                                         "source",
+                                         "env_id",
+                                         "date_from",
+                                         "date_to",
+                                         "wrong_country_code",
+                                         "wrong_state_code",
+                                         "comment",
+                                         ""
+                                     ],
+                         "bytes":  13163,
+                         "last_modified":  "2026-04-11T11:42:47.4740000-05:00",
+                         "tags":  [
+                                      "opentraveldata"
+                                  ],
+                         "readme_excerpt":  "* [``optd_state_exceptions.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_state_exceptions.csv)\\n  is the list of exception rules specifying which regions IATA does not correctly\\n  reference. That is for instance used by the\\n  [`check-por-cmp-optd-it.py` checker script](http://github.com/opentraveldata/quality-assurance/blob/master/checkers/check-por-cmp-optd-it.py).\\n  \\n## Generated\\n* [``optd_countries.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_countries.csv)"
+                     },
+                     {
+                         "name":  "optd_tz_light.csv",
+                         "path":  "optd_tz_light.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "country_code",
+                                         "time_zone"
+                                     ],
+                         "bytes":  4882,
+                         "last_modified":  "2026-04-11T11:42:47.4930000-05:00",
+                         "tags":  [
+                                      "opentraveldata"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_usdot_wac.csv",
+                         "path":  "optd_usdot_wac.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "wac",
+                                         "wac_seq_id2",
+                                         "wac_name",
+                                         "world_area_name",
+                                         "ctry_short_name",
+                                         "ctry_type",
+                                         "cptl",
+                                         "svgty",
+                                         "ctry_code_iso",
+                                         "state_code",
+                                         "state_name",
+                                         "state_fips",
+                                         "from_date",
+                                         "to_date",
+                                         "comments",
+                                         "is_latest",
+                                         ""
+                                     ],
+                         "bytes":  61692,
+                         "last_modified":  "2026-04-11T11:42:47.5120000-05:00",
+                         "tags":  [
+                                      "opentraveldata"
+                                  ],
+                         "readme_excerpt":  "* [``optd_usdot_wac.csv``](https://github.com/opentraveldata/opentraveldata/tree/master/opentraveldata/optd_region_details.csv)\\n  is the list of World Area Codes (WAC), as maintained by the US Department\\n  of Transportation (DOT):\\n  http://www.transtats.bts.gov/Fields.asp?Table_ID=315\\n  For the United States (US) and Canada, the WAC are specified at state level.\\n  For all the other countries, the WAC are specified at country level.\\n  There are some (tractable) issues when it comes to country definition,"
+                     },
+                     {
+                         "name":  "por_schedule_counts_2011_01_to_2013_10.csv",
+                         "path":  "por_in_schedule/por_schedule_counts_2011_01_to_2013_10.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "AAA",
+                                         "197"
+                                     ],
+                         "bytes":  39514,
+                         "last_modified":  "2026-04-11T11:42:47.5780000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "schedules",
+                                      "reference"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "ref_airline_nb_of_flights.csv",
+                         "path":  "ref_airline_nb_of_flights.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "iata_code",
+                                         "icao_code",
+                                         "nb_seats",
+                                         "flight_freq"
+                                     ],
+                         "bytes":  10375,
+                         "last_modified":  "2026-04-11T11:42:47.5950000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "airlines",
+                                      "reference"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "ref_airport_pageranked.csv",
+                         "path":  "ref_airport_pageranked.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "pk",
+                                         "por_code",
+                                         "pr_seats",
+                                         "pr_freq"
+                                     ],
+                         "bytes":  374278,
+                         "last_modified":  "2026-04-11T11:42:47.6150000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "airports",
+                                      "reference"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "ref_airport_popularity.csv",
+                         "path":  "ref_airport_popularity.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "region_code",
+                                         "country",
+                                         "city",
+                                         "airport",
+                                         "airport_code",
+                                         "atmsa",
+                                         "atmsb",
+                                         "atmsc",
+                                         "atmsd",
+                                         "tatm",
+                                         "paxa",
+                                         "paxb",
+                                         "paxc",
+                                         "paxd",
+                                         "tpax",
+                                         "frta",
+                                         "frtb",
+                                         "tfrt",
+                                         "mail",
+                                         "tcgo",
+                                         "latmsa",
+                                         "latmsb",
+                                         "latmsc",
+                                         "latmsd",
+                                         "ltatm",
+                                         "lpaxa",
+                                         "lpaxb",
+                                         "lpaxc",
+                                         "lpaxd",
+                                         "ltpax",
+                                         "lfrta",
+                                         "lfrtb",
+                                         "ltfrt",
+                                         "lmail",
+                                         "ltcgo"
+                                     ],
+                         "bytes":  228403,
+                         "last_modified":  "2026-04-11T11:42:47.6360000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "airports",
+                                      "reference"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_por_list_for_ar.csv",
+                         "path":  "samples_4_lang/optd_por_list_for_ar.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "ATH"
+                                     ],
+                         "bytes":  1690,
+                         "last_modified":  "2026-04-11T11:42:47.6610000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_por_public_ar.csv",
+                         "path":  "samples_4_lang/optd_por_public_ar.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "LON;C;GB;http://geonames.org/2643743 ;1.0;London;London;ar;Ù„Ù†Ø¯Ù†"
+                                     ],
+                         "bytes":  1397958,
+                         "last_modified":  "2026-04-11T11:42:47.7020000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_por_public_ar_fltd.csv",
+                         "path":  "samples_4_lang/optd_por_public_ar_fltd.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "iata_code;location_type;country_code;geoname_link;name;asciiname;lang_code;name_list"
+                                     ],
+                         "bytes":  68333,
+                         "last_modified":  "2026-04-11T11:42:47.7250000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_por_public_ar_sv.csv",
+                         "path":  "samples_4_lang/optd_por_public_ar_sv.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "LHR;A;GB;http://geonames.org/2647216 ;0.808784971382;London Heathrow Airport;London Heathrow Airport;ar;Ù…Ø·Ø§Ø± Ù„Ù†Ø¯Ù† Ù‡ÙŠØ«Ø±Ùˆ"
+                                     ],
+                         "bytes":  20884,
+                         "last_modified":  "2026-04-11T11:42:47.7420000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_por_public_en.csv",
+                         "path":  "samples_4_lang/optd_por_public_en.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "ATL;A;US;http://geonames.org/4199556 ;0.886746961967;Hartsfield-Jackson Atlanta International Airport;Hartsfield-Jackson Atlanta International Airport;en;Hartsfieldâ€“Jackson Atlanta International Airport"
+                                     ],
+                         "bytes":  993211,
+                         "last_modified":  "2026-04-11T11:42:47.8130000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_por_public_en_qf.csv",
+                         "path":  "samples_4_lang/optd_por_public_en_qf.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "LHR;A;GB;http://geonames.org/2647216 ;0.808784971382;London Heathrow Airport;London Heathrow Airport;en;Heathrow Airport=Heathrow|s=London Heathrow Airport|p"
+                                     ],
+                         "bytes":  17595,
+                         "last_modified":  "2026-04-11T11:42:47.8320000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_por_public_ja_nh.csv",
+                         "path":  "samples_4_lang/optd_por_public_ja_nh.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "LHR;A;GB;http://geonames.org/2647216 ;0.808784971382;London Heathrow Airport;London Heathrow Airport;ja;ãƒ­ãƒ³ãƒ‰ãƒ³ãƒ»ãƒ’ãƒ¼ã‚¹ãƒ­ãƒ¼ç©ºæ¸¯"
+                                     ],
+                         "bytes":  18711,
+                         "last_modified":  "2026-04-11T11:42:47.8500000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  ""
+                     },
+                     {
+                         "name":  "optd_por_public_zh_hu.csv",
+                         "path":  "samples_4_lang/optd_por_public_zh_hu.csv",
+                         "delimiter":  "^",
+                         "columns":  [
+                                         "CDG;A;FR;http://geonames.org/6269554 ;0.782315181376;Paris Charles de Gaulle Airport;Paris Charles de Gaulle Airport;zh;å·´é»Žå¤å°”Â·æˆ´é«˜ä¹æœºåœº"
+                                     ],
+                         "bytes":  22801,
+                         "last_modified":  "2026-04-11T11:42:47.8660000-05:00",
+                         "tags":  [
+                                      "opentraveldata",
+                                      "por",
+                                      "airports",
+                                      "cities"
+                                  ],
+                         "readme_excerpt":  ""
+                     }
+                 ]
+}
