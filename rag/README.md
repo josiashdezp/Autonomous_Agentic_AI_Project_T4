@@ -25,27 +25,27 @@ The design separates offline indexing from online retrieval. This makes the syst
 
 
 
-\* \[Overview](#overview)
+*[Overview](#overview)
 
-\* \[What This Module Does](#what-this-module-does)
+*[What This Module Does](#what-this-module-does)
 
-\* \[Architecture](#architecture)
+*[Architecture](#architecture)
 
-\* \[Data Sources](#data-sources)
+*[Data Sources](#data-sources)
 
-\* \[Project Structure](#project-structure)
+*[Project Structure](#project-structure)
 
-\* \[How the Pipeline Works](#how-the-pipeline-works)
+*[How the Pipeline Works](#how-the-pipeline-works)
 
-\* \[Installation](#installation)
+*[Installation](#installation)
 
-\* \[Usage](#usage)
+*[Usage](#usage)
 
-\* \[Retrieval Layer](#retrieval-layer)
+*[Retrieval Layer](#retrieval-layer)
 
-\* \[Design Notes](#design-notes)
+*[Design Notes](#design-notes)
 
-\* \[Future Improvements](#future-improvements)
+*[Future Improvements](#future-improvements)
 
 
 
@@ -73,17 +73,17 @@ At runtime, the retrieval service performs similarity search and can optionally 
 
 
 
-\* Ingests travel content from multiple curated sources
+*Ingests travel content from multiple curated sources
 
-\* Normalizes raw content into structured `TravelDocument` objects
+*Normalizes raw content into structured `TravelDocument` objects
 
-\* Splits documents into semantic `TravelSection` units
+*Splits documents into semantic `TravelSection` units
 
-\* Chunks sections into embedding-sized LangChain documents
+*Chunks sections into embedding-sized LangChain documents
 
-\* Stores embeddings in a persistent Chroma collection
+*Stores embeddings in a persistent Chroma collection
 
-\* Exposes a retrieval service for semantic search
+*Exposes a retrieval service for semantic search
 
 
 
@@ -155,11 +155,11 @@ The pipeline currently integrates:
 
 
 
-\* Wikipedia
+*Wikipedia
 
-\* National Park Service (NPS)
+*National Park Service (NPS)
 
-\* Visit The USA
+*Visit The USA
 
 
 
@@ -171,11 +171,11 @@ This approach ensures:
 
 
 
-\* Data quality and consistency
+*Data quality and consistency
 
-\* Reproducibility of the dataset
+*Reproducibility of the dataset
 
-\* Full control over sources
+*Full control over sources
 
 
 
@@ -211,15 +211,15 @@ rag/
 
 
 
-\* \*\*structures.py\*\* — defines core data models (`TravelDocument`, `TravelSection`)
+**\*structures.py\**— defines core data models (`TravelDocument`, `TravelSection`)
 
-\* \*\*ingestors.py\*\* — handles data fetching and parsing for each source
+**\*ingestors.py\**— handles data fetching and parsing for each source
 
-\* \*\*splitters.py\*\* — splits documents into semantic sections
+**\*splitters.py\**— splits documents into semantic sections
 
-\* \*\*indexing.py\*\* — handles cleaning, chunking, and embedding preparation
+**\*indexing.py\**— handles cleaning, chunking, and embedding preparation
 
-\* \*\*service.py\*\* — provides the retrieval interface
+**\*service.py\**— provides the retrieval interface
 
 
 
@@ -343,13 +343,13 @@ This will:
 
 
 
-\* Fetch data from configured sources
+*Fetch data from configured sources
 
-\* Process and clean documents
+*Process and clean documents
 
-\* Generate embeddings
+*Generate embeddings
 
-\* Store them in the Chroma vector database
+*Store them in the Chroma vector database
 
 
 
@@ -421,15 +421,15 @@ The retrieval layer wraps vector similarity search and formats results with sour
 
 
 
-\* Uses structured schemas instead of raw text
+*Uses structured schemas instead of raw text
 
-\* Preserves metadata across all stages
+*Preserves metadata across all stages
 
-\* Separates indexing from retrieval
+*Separates indexing from retrieval
 
-\* Uses curated data sources instead of uncontrolled scraping
+*Uses curated data sources instead of uncontrolled scraping
 
-\* Designed for integration into agent-based systems
+*Designed for integration into agent-based systems
 
 
 
@@ -441,15 +441,15 @@ The retrieval layer wraps vector similarity search and formats results with sour
 
 
 
-\* Hybrid retrieval (vector + keyword search)
+*Hybrid retrieval (vector + keyword search)
 
-\* Reranking models for improved accuracy
+*Reranking models for improved accuracy
 
-\* Query rewriting and reasoning chains
+*Query rewriting and reasoning chains
 
-\* Additional data sources
+*Additional data sources
 
-\* Evaluation framework for retrieval quality
+*Evaluation framework for retrieval quality
 
 
 
