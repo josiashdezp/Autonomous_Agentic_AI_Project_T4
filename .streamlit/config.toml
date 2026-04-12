@@ -3,5 +3,11 @@ primaryColor = "#F97316"
 font = "sans serif"
  
 [client]
-toolbarMode = "minimal"
+toolbarMode = "viewer"
+ 
+[server]
+runOnSave = true
+ 
+[browser]
+gatherUsageStats = false
  
