@@ -1,4 +1,4 @@
-# Travel RAG Module
+# 📘 Travel RAG Module (Updated)
 
 <p align="left">
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue" alt="Python">
@@ -8,9 +8,80 @@
   <img src="https://img.shields.io/badge/Status-In%20Development-yellow" alt="Status">
 </p>
 
-This module implements the Retrieval-Augmented Generation (RAG) layer for a travel-focused AI agent. It is responsible for collecting curated travel content, transforming it into structured documents, splitting content into semantically meaningful sections, generating embeddings, and storing the resulting chunks in a Chroma vector database for retrieval at runtime.
+This module implements the Retrieval-Augmented Generation (RAG) layer for a travel-focused AI agent. It collects curated
+travel content, structures it, splits it semantically, generates embeddings, and stores it in a Chroma vector database
+for efficient retrieval.
 
-The design separates offline indexing from online retrieval. This makes the system easier to maintain, extend, and integrate into larger agentic workflows.
+The system is designed as an **offline-first indexing pipeline** that integrates into a larger **agentic AI architecture
+using LangGraph**.
+
+---
+
+## ⚠️ REQUIRED SETUP (IMPORTANT)
+
+### 1. Environment Variables
+
+You MUST create a `.env` file in the root of the project with:
+
+```env
+LANGSMITH_TRACING=true
+LANGSMITH_API_KEY=your_key_here
+OPENAI_API_KEY=your_key_here
+GIT_HUB_JHP=your_key_here
+```
+
+⚠️ Without these keys:
+
+* embeddings will fail
+* observability will not work
+* the system will not run correctly
+
+---
+
+### 2. Vector Database Setup
+
+You MUST do one of the following:
+
+### Option A — Use Prebuilt DB (Recommended)
+
+1. Locate:
+
+```text
+chroma_travel_db.zip
+```
+
+2. Extract it into:
+
+```text
+/rag/
+```
+
+Final structure:
+
+```text
+/rag/chroma_travel_db/
+    chroma.sqlite3
+    <uuid folders>
+```
+
+⚠️ If this is not done, the RAG will return empty results.
+
+---
+
+### Option B — Rebuild the DB
+
+```bash
+python rag/build_rag_index.py
+```
+
+This will:
+
+* scrape sources
+* process documents
+* generate embeddings
+* build the vector DB
+
+⚠️ Requires valid OpenAI API key and may take time.
 
 ---
 
@@ -32,29 +103,30 @@ The design separates offline indexing from online retrieval. This makes the syst
 
 ## Overview
 
-This module provides an end-to-end RAG pipeline for travel knowledge. It ingests curated content from external sources, standardizes it into a common schema, cleans and sections the text, chunks it into embedding-ready units, and stores those chunks in a vector database.
+This module provides a complete RAG pipeline for travel knowledge. It ingests curated content, converts it into
+structured objects, splits it into semantic sections, chunks it for embeddings, and stores it in a vector database.
 
-At runtime, the retrieval service performs similarity search and can optionally filter results by destination.
+The dataset is built offline and reused during inference, enabling fast and stable retrieval.
 
 ---
 
 ## What This Module Does
 
-* Ingests travel content from multiple curated sources
-* Normalizes raw content into structured `TravelDocument` objects
+* Ingests travel content from curated sources
+* Normalizes content into `TravelDocument` objects
 * Splits documents into semantic `TravelSection` units
-* Chunks sections into embedding-sized LangChain documents
-* Stores embeddings in a persistent Chroma collection
-* Exposes a retrieval service for semantic search
+* Converts sections into embedding-ready chunks
+* Stores embeddings in a persistent Chroma vector database
+* Enables semantic retrieval for downstream agents
 
 ---
 
 ## Architecture
 
 ```text
-Curated Source Registry
+SOURCE_REGISTRY
         ↓
-Source Ingestors
+Ingestors
         ↓
 TravelDocument
         ↓
@@ -64,34 +136,65 @@ SectionSplitter
         ↓
 TravelSection
         ↓
-Chunking
+Chunking (LangChain)
         ↓
-Embeddings
+Embeddings (OpenAI)
         ↓
 Chroma Vector Store
         ↓
-TravelRAGService
+Retrieval Service
 ```
+
+```mermaid
+flowchart TD
+
+    A[SOURCE_REGISTRY<br>rag_config.py] --> B[Ingestors<br>ingestors.py]
+
+    B --> C[TravelDocument<br>structures.py]
+
+    C --> D[Text Cleaning<br>TravelTextCleaner]
+
+    D --> E[SectionSplitter<br>splitters.py]
+
+    E --> F[TravelSection]
+
+    F --> G[Chunking<br>LangChain Splitter]
+
+    G --> H[Embeddings<br>OpenAI]
+
+    H --> I[Chroma Vector DB<br>chroma_travel_db]
+
+    I --> J[Retrieval Layer<br>TravelRAGService]
+
+    J --> K[LangGraph Agent]
 
 ---
 
 ## Data Sources
 
-This module uses curated data instead of uncontrolled web crawling. The dataset is defined through a structured source registry that specifies what content should be ingested.
+Sources are defined through a centralized registry:
 
-The pipeline currently integrates:
+```python
+SOURCE_REGISTRY
+```
 
-* Wikipedia
-* National Park Service (NPS)
-* Visit The USA
+This controls:
 
-Each source is processed through a dedicated ingestor that fetches, cleans, and transforms content into a standardized format. This ensures consistency across heterogeneous sources and maintains high data quality.
+* which sources are enabled
+* how URLs are constructed
+* scraping depth
+* parser (ingestor) class
 
-This approach ensures:
+Examples include:
 
-* Data quality and consistency
-* Reproducibility of the dataset
-* Full control over sources
+* Wikivoyage (depth-1 scraping)
+* VisitTheUSA
+* Recreation.gov
+* The Dyrt
+* Expatistan
+* GasBuddy
+
+Some sources are disabled due to scraping restrictions (e.g., AllTrails).
 
 ---
 
@@ -100,20 +203,23 @@ This approach ensures:
 ```text
 rag/
 ├── README.md
+├── rag_config.py
 ├── ingestors.py
 ├── indexing.py
-├── service.py
 ├── splitters.py
-└── structures.py
+├── structures.py
+├── build_rag_index.py
+└── chroma_travel_db/   (generated or extracted)
 ```
 
 ### File Responsibilities
 
-**structures.py** — defines core data models (`TravelDocument`, `TravelSection`)  
-**ingestors.py** — handles data fetching and parsing for each source  
-**splitters.py** — splits documents into semantic sections  
-**indexing.py** — handles cleaning, chunking, and embedding preparation  
-**service.py** — provides the retrieval interface  
+**structures.py** → data models (`TravelDocument`, `TravelSection`)
+**ingestors.py** → scraping + parsing logic for each source
+**splitters.py** → semantic sectioning logic
+**indexing.py** → cleaning, chunking, embedding, batching
+**rag_config.py** → source registry + configuration
+**build_rag_index.py** → orchestrates full pipeline
 
 ---
 
@@ -121,46 +227,76 @@ rag/
 
 ### 1. Ingestion
 
-Content is collected from a curated registry. Each source-specific ingestor fetches and converts raw content into a standardized `TravelDocument` format with consistent metadata.
+Each source is processed through an ingestor class derived from `BaseHTMLIngestor`.
+
+The system supports:
+
+* generic article parsing
+* custom parsing (e.g., VisitTheUSA)
+* depth-1 scraping (Wikivoyage)
+
+---
 
 ### 2. Cleaning
 
-Text is normalized to remove noise such as extra whitespace and formatting inconsistencies.
+Text is normalized to remove noise:
+
+```python
+TravelTextCleaner
+```
+
+---
 
 ### 3. Semantic Sectioning
 
-Documents are split into logical sections using heading-based heuristics instead of naive chunking.
+Documents are split using a heading-based heuristic:
+
+```python
+SectionSplitter.split_document(...)
+```
+
+This creates structured sections instead of naive chunks.
+
+---
 
 ### 4. Chunking
 
-Each section is broken into smaller chunks suitable for embedding, while preserving metadata.
+Sections are converted into LangChain `Document` objects and split using:
+
+```python
+RecursiveCharacterTextSplitter
+```
+
+---
 
 ### 5. Embedding & Indexing
 
-Chunks are embedded using OpenAI embeddings and stored in a Chroma vector database.
+Chunks are embedded using:
+
+```python
+text-embedding-3-small
+```
+
+and stored in Chroma.
+
+Batching is used to improve stability:
+
+```python
+build_index(batch_size=50)
+```
+
+---
 
 ### 6. Retrieval
 
-Similarity search retrieves relevant chunks based on user queries, optionally filtered by destination.
+The vector DB supports similarity search and can be integrated into a retrieval service or agent pipeline.
 
 ---
 
 ## Installation
 
 ```bash
-pip install beautifulsoup4 requests langchain langchain-openai langchain-chroma langchain-text-splitters colorama
-```
-
-Set your environment variable:
-
-```bash
-export OPENAI_API_KEY=your_api_key
-```
-
-Windows PowerShell:
-
-```powershell
-$env:OPENAI_API_KEY="your_api_key"
+pip install beautifulsoup4 requests langchain langchain-openai langchain-chroma langchain-text-splitters colorama python-dotenv
 ```
 
 ---
@@ -170,72 +306,82 @@ $env:OPENAI_API_KEY="your_api_key"
 ### Build the Index
 
 ```bash
-python build_rag_index.py
+python rag/build_rag_index.py
 ```
-
-This will:
-
-* Fetch data from configured sources
-* Process and clean documents
-* Generate embeddings
-* Store them in the Chroma vector database
 
 ---
 
-### Query the RAG Service
+### Query the RAG
 
 ```python
 from langchain_chroma import Chroma
 from rag.service import TravelRAGService
 
 vector_store = Chroma(
-    collection_name="your_collection",
-    persist_directory="your_directory",
+    collection_name="us_travel_rag",
+    persist_directory="./chroma_travel_db",
     embedding_function=your_embeddings
 )
 
 rag = TravelRAGService(vector_store)
 
 result = rag.search(
-    query="best landmarks to visit",
+    query="best places to visit",
     destination="New York City"
 )
-
-print(result)
 ```
 
 ---
 
 ## Retrieval Layer
 
-The retrieval layer wraps vector similarity search and formats results with source and destination context. It is intentionally minimal so that higher-level agent components can handle reasoning and response generation.
+The retrieval layer wraps similarity search and returns structured results with metadata such as:
+
+* destination
+* state
+* source
+* category
+
+This layer is designed to be used inside a **LangGraph agent node**.
 
 ---
 
 ## Design Notes
 
-* Uses structured schemas instead of raw text
-* Preserves metadata across all stages
-* Separates indexing from retrieval
-* Uses curated data sources instead of uncontrolled scraping
-* Designed for integration into agent-based systems
+* Registry-driven ingestion for scalability
+* Structured schemas instead of raw text
+* Separation of ingestion and indexing
+* Offline-first approach for performance
+* Batch indexing to avoid API failures
+* Modular design aligned with agentic workflows
 
 ---
 
 ## Future Improvements
 
-* Hybrid retrieval (vector + keyword search)
-* Reranking models for improved accuracy
-* Query rewriting and reasoning chains
-* Additional data sources
-* Evaluation framework for retrieval quality
+* Hybrid retrieval (keyword + vector)
+* Reranking models
+* Query rewriting
+* More structured datasets
+* Evaluation framework
 
 ---
 
 ## Author
 
-Part of a broader project focused on building autonomous AI agents with structured reasoning, tools, and retrieval capabilities.
+Part of a broader project focused on autonomous AI agents with reasoning, tools, and retrieval.
 
-Hernandez Perez, Josias - https://github.com/josiashdezp  
-Sen, Indu - https://github.com/indu-sen  
-Gadde, Srichandrika -
+Hernandez Perez, Josias
+[https://github.com/josiashdezp](https://github.com/josiashdezp)
+
+---
+
+## Final Note
+
+The dataset used by this RAG is generated from a structured locations file:
+
+```text
+data/usa_locations.json
+```
+
+which defines all states and major cities used for ingestion. 

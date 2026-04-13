@@ -1,0 +1,2118 @@
+{
+  "states": [
+    {
+      "name": "Alabama",
+      "abbr": "AL",
+      "slug": "alabama",
+      "major_cities": [
+        {
+          "name": "Birmingham",
+          "slug": "birmingham",
+          "aliases": [
+            "Birmingham, AL"
+          ]
+        },
+        {
+          "name": "Huntsville",
+          "slug": "huntsville",
+          "aliases": [
+            "Huntsville, AL"
+          ]
+        },
+        {
+          "name": "Mobile",
+          "slug": "mobile",
+          "aliases": [
+            "Mobile, AL"
+          ]
+        },
+        {
+          "name": "Montgomery",
+          "slug": "montgomery",
+          "aliases": [
+            "Montgomery, AL"
+          ]
+        },
+        {
+          "name": "Gulf Shores",
+          "slug": "gulf-shores",
+          "aliases": [
+            "Gulf Shores, AL",
+            "Gulf Shores and Orange Beach"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Alaska",
+      "abbr": "AK",
+      "slug": "alaska",
+      "major_cities": [
+        {
+          "name": "Anchorage",
+          "slug": "anchorage",
+          "aliases": [
+            "Anchorage, AK"
+          ]
+        },
+        {
+          "name": "Fairbanks",
+          "slug": "fairbanks",
+          "aliases": [
+            "Fairbanks, AK"
+          ]
+        },
+        {
+          "name": "Juneau",
+          "slug": "juneau",
+          "aliases": [
+            "Juneau, AK"
+          ]
+        },
+        {
+          "name": "Seward",
+          "slug": "seward",
+          "aliases": [
+            "Seward, AK"
+          ]
+        },
+        {
+          "name": "Talkeetna",
+          "slug": "talkeetna",
+          "aliases": [
+            "Talkeetna, AK"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Arizona",
+      "abbr": "AZ",
+      "slug": "arizona",
+      "major_cities": [
+        {
+          "name": "Phoenix",
+          "slug": "phoenix",
+          "aliases": [
+            "Phoenix, AZ"
+          ]
+        },
+        {
+          "name": "Scottsdale",
+          "slug": "scottsdale",
+          "aliases": [
+            "Scottsdale, AZ"
+          ]
+        },
+        {
+          "name": "Sedona",
+          "slug": "sedona",
+          "aliases": [
+            "Sedona, AZ"
+          ]
+        },
+        {
+          "name": "Tucson",
+          "slug": "tucson",
+          "aliases": [
+            "Tucson, AZ"
+          ]
+        },
+        {
+          "name": "Flagstaff",
+          "slug": "flagstaff",
+          "aliases": [
+            "Flagstaff, AZ"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Arkansas",
+      "abbr": "AR",
+      "slug": "arkansas",
+      "major_cities": [
+        {
+          "name": "Little Rock",
+          "slug": "little-rock",
+          "aliases": [
+            "Little Rock, AR"
+          ]
+        },
+        {
+          "name": "Hot Springs",
+          "slug": "hot-springs",
+          "aliases": [
+            "Hot Springs, AR"
+          ]
+        },
+        {
+          "name": "Fayetteville",
+          "slug": "fayetteville",
+          "aliases": [
+            "Fayetteville, AR"
+          ]
+        },
+        {
+          "name": "Bentonville",
+          "slug": "bentonville",
+          "aliases": [
+            "Bentonville, AR"
+          ]
+        },
+        {
+          "name": "Eureka Springs",
+          "slug": "eureka-springs",
+          "aliases": [
+            "Eureka Springs, AR"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "California",
+      "abbr": "CA",
+      "slug": "california",
+      "major_cities": [
+        {
+          "name": "Los Angeles",
+          "slug": "los-angeles",
+          "aliases": [
+            "LA",
+            "Los Angeles, CA"
+          ]
+        },
+        {
+          "name": "San Francisco",
+          "slug": "san-francisco",
+          "aliases": [
+            "SF",
+            "San Francisco, CA"
+          ]
+        },
+        {
+          "name": "San Diego",
+          "slug": "san-diego",
+          "aliases": [
+            "San Diego, CA"
+          ]
+        },
+        {
+          "name": "Anaheim",
+          "slug": "anaheim",
+          "aliases": [
+            "Anaheim, CA"
+          ]
+        },
+        {
+          "name": "Palm Springs",
+          "slug": "palm-springs",
+          "aliases": [
+            "Palm Springs, CA"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Colorado",
+      "abbr": "CO",
+      "slug": "colorado",
+      "major_cities": [
+        {
+          "name": "Denver",
+          "slug": "denver",
+          "aliases": [
+            "Denver, CO"
+          ]
+        },
+        {
+          "name": "Colorado Springs",
+          "slug": "colorado-springs",
+          "aliases": [
+            "Colorado Springs, CO"
+          ]
+        },
+        {
+          "name": "Aspen",
+          "slug": "aspen",
+          "aliases": [
+            "Aspen, CO"
+          ]
+        },
+        {
+          "name": "Boulder",
+          "slug": "boulder",
+          "aliases": [
+            "Boulder, CO"
+          ]
+        },
+        {
+          "name": "Vail",
+          "slug": "vail",
+          "aliases": [
+            "Vail, CO"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Connecticut",
+      "abbr": "CT",
+      "slug": "connecticut",
+      "major_cities": [
+        {
+          "name": "New Haven",
+          "slug": "new-haven",
+          "aliases": [
+            "New Haven, CT"
+          ]
+        },
+        {
+          "name": "Hartford",
+          "slug": "hartford",
+          "aliases": [
+            "Hartford, CT"
+          ]
+        },
+        {
+          "name": "Mystic",
+          "slug": "mystic",
+          "aliases": [
+            "Mystic, CT"
+          ]
+        },
+        {
+          "name": "Stamford",
+          "slug": "stamford",
+          "aliases": [
+            "Stamford, CT"
+          ]
+        },
+        {
+          "name": "Norwalk",
+          "slug": "norwalk",
+          "aliases": [
+            "Norwalk, CT"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Delaware",
+      "abbr": "DE",
+      "slug": "delaware",
+      "major_cities": [
+        {
+          "name": "Wilmington",
+          "slug": "wilmington",
+          "aliases": [
+            "Wilmington, DE"
+          ]
+        },
+        {
+          "name": "Rehoboth Beach",
+          "slug": "rehoboth-beach",
+          "aliases": [
+            "Rehoboth Beach, DE"
+          ]
+        },
+        {
+          "name": "Dover",
+          "slug": "dover",
+          "aliases": [
+            "Dover, DE"
+          ]
+        },
+        {
+          "name": "Lewes",
+          "slug": "lewes",
+          "aliases": [
+            "Lewes, DE"
+          ]
+        },
+        {
+          "name": "Newark",
+          "slug": "newark",
+          "aliases": [
+            "Newark, DE"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Florida",
+      "abbr": "FL",
+      "slug": "florida",
+      "major_cities": [
+        {
+          "name": "Miami",
+          "slug": "miami",
+          "aliases": [
+            "Miami, FL"
+          ]
+        },
+        {
+          "name": "Orlando",
+          "slug": "orlando",
+          "aliases": [
+            "Orlando, FL"
+          ]
+        },
+        {
+          "name": "Tampa",
+          "slug": "tampa",
+          "aliases": [
+            "Tampa, FL"
+          ]
+        },
+        {
+          "name": "Key West",
+          "slug": "key-west",
+          "aliases": [
+            "Key West, FL"
+          ]
+        },
+        {
+          "name": "St. Augustine",
+          "slug": "st-augustine",
+          "aliases": [
+            "St. Augustine, FL"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Georgia",
+      "abbr": "GA",
+      "slug": "georgia",
+      "major_cities": [
+        {
+          "name": "Atlanta",
+          "slug": "atlanta",
+          "aliases": [
+            "Atlanta, GA"
+          ]
+        },
+        {
+          "name": "Savannah",
+          "slug": "savannah",
+          "aliases": [
+            "Savannah, GA"
+          ]
+        },
+        {
+          "name": "Augusta",
+          "slug": "augusta",
+          "aliases": [
+            "Augusta, GA"
+          ]
+        },
+        {
+          "name": "Athens",
+          "slug": "athens",
+          "aliases": [
+            "Athens, GA"
+          ]
+        },
+        {
+          "name": "Macon",
+          "slug": "macon",
+          "aliases": [
+            "Macon, GA"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hawaii",
+      "abbr": "HI",
+      "slug": "hawaii",
+      "major_cities": [
+        {
+          "name": "Honolulu",
+          "slug": "honolulu",
+          "aliases": [
+            "Honolulu, HI"
+          ]
+        },
+        {
+          "name": "Kailua-Kona",
+          "slug": "kailua-kona",
+          "aliases": [
+            "Kailua-Kona, HI",
+            "Kona"
+          ]
+        },
+        {
+          "name": "Lahaina",
+          "slug": "lahaina",
+          "aliases": [
+            "Lahaina, HI"
+          ]
+        },
+        {
+          "name": "Hilo",
+          "slug": "hilo",
+          "aliases": [
+            "Hilo, HI"
+          ]
+        },
+        {
+          "name": "Princeville",
+          "slug": "princeville",
+          "aliases": [
+            "Princeville, HI"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Idaho",
+      "abbr": "ID",
+      "slug": "idaho",
+      "major_cities": [
+        {
+          "name": "Boise",
+          "slug": "boise",
+          "aliases": [
+            "Boise, ID"
+          ]
+        },
+        {
+          "name": "Sun Valley",
+          "slug": "sun-valley",
+          "aliases": [
+            "Sun Valley, ID"
+          ]
+        },
+        {
+          "name": "Coeur d'Alene",
+          "slug": "coeur-dalene",
+          "aliases": [
+            "Coeur d'Alene, ID"
+          ]
+        },
+        {
+          "name": "Idaho Falls",
+          "slug": "idaho-falls",
+          "aliases": [
+            "Idaho Falls, ID"
+          ]
+        },
+        {
+          "name": "Sandpoint",
+          "slug": "sandpoint",
+          "aliases": [
+            "Sandpoint, ID"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Illinois",
+      "abbr": "IL",
+      "slug": "illinois",
+      "major_cities": [
+        {
+          "name": "Chicago",
+          "slug": "chicago",
+          "aliases": [
+            "Chicago, IL"
+          ]
+        },
+        {
+          "name": "Springfield",
+          "slug": "springfield",
+          "aliases": [
+            "Springfield, IL"
+          ]
+        },
+        {
+          "name": "Galena",
+          "slug": "galena",
+          "aliases": [
+            "Galena, IL"
+          ]
+        },
+        {
+          "name": "Rockford",
+          "slug": "rockford",
+          "aliases": [
+            "Rockford, IL"
+          ]
+        },
+        {
+          "name": "Peoria",
+          "slug": "peoria",
+          "aliases": [
+            "Peoria, IL"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Indiana",
+      "abbr": "IN",
+      "slug": "indiana",
+      "major_cities": [
+        {
+          "name": "Indianapolis",
+          "slug": "indianapolis",
+          "aliases": [
+            "Indianapolis, IN"
+          ]
+        },
+        {
+          "name": "Bloomington",
+          "slug": "bloomington",
+          "aliases": [
+            "Bloomington, IN"
+          ]
+        },
+        {
+          "name": "South Bend",
+          "slug": "south-bend",
+          "aliases": [
+            "South Bend, IN"
+          ]
+        },
+        {
+          "name": "Fort Wayne",
+          "slug": "fort-wayne",
+          "aliases": [
+            "Fort Wayne, IN"
+          ]
+        },
+        {
+          "name": "Nashville",
+          "slug": "nashville-indiana",
+          "aliases": [
+            "Nashville, IN",
+            "Nashville, Indiana"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Iowa",
+      "abbr": "IA",
+      "slug": "iowa",
+      "major_cities": [
+        {
+          "name": "Des Moines",
+          "slug": "des-moines",
+          "aliases": [
+            "Des Moines, IA"
+          ]
+        },
+        {
+          "name": "Dubuque",
+          "slug": "dubuque",
+          "aliases": [
+            "Dubuque, IA"
+          ]
+        },
+        {
+          "name": "Iowa City",
+          "slug": "iowa-city",
+          "aliases": [
+            "Iowa City, IA"
+          ]
+        },
+        {
+          "name": "Cedar Rapids",
+          "slug": "cedar-rapids",
+          "aliases": [
+            "Cedar Rapids, IA"
+          ]
+        },
+        {
+          "name": "Sioux City",
+          "slug": "sioux-city",
+          "aliases": [
+            "Sioux City, IA"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kansas",
+      "abbr": "KS",
+      "slug": "kansas",
+      "major_cities": [
+        {
+          "name": "Wichita",
+          "slug": "wichita",
+          "aliases": [
+            "Wichita, KS"
+          ]
+        },
+        {
+          "name": "Overland Park",
+          "slug": "overland-park",
+          "aliases": [
+            "Overland Park, KS"
+          ]
+        },
+        {
+          "name": "Topeka",
+          "slug": "topeka",
+          "aliases": [
+            "Topeka, KS"
+          ]
+        },
+        {
+          "name": "Lawrence",
+          "slug": "lawrence",
+          "aliases": [
+            "Lawrence, KS"
+          ]
+        },
+        {
+          "name": "Dodge City",
+          "slug": "dodge-city",
+          "aliases": [
+            "Dodge City, KS"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kentucky",
+      "abbr": "KY",
+      "slug": "kentucky",
+      "major_cities": [
+        {
+          "name": "Louisville",
+          "slug": "louisville",
+          "aliases": [
+            "Louisville, KY"
+          ]
+        },
+        {
+          "name": "Lexington",
+          "slug": "lexington",
+          "aliases": [
+            "Lexington, KY"
+          ]
+        },
+        {
+          "name": "Bowling Green",
+          "slug": "bowling-green",
+          "aliases": [
+            "Bowling Green, KY"
+          ]
+        },
+        {
+          "name": "Frankfort",
+          "slug": "frankfort",
+          "aliases": [
+            "Frankfort, KY"
+          ]
+        },
+        {
+          "name": "Paducah",
+          "slug": "paducah",
+          "aliases": [
+            "Paducah, KY"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Louisiana",
+      "abbr": "LA",
+      "slug": "louisiana",
+      "major_cities": [
+        {
+          "name": "New Orleans",
+          "slug": "new-orleans",
+          "aliases": [
+            "NOLA",
+            "New Orleans, LA"
+          ]
+        },
+        {
+          "name": "Baton Rouge",
+          "slug": "baton-rouge",
+          "aliases": [
+            "Baton Rouge, LA"
+          ]
+        },
+        {
+          "name": "Lafayette",
+          "slug": "lafayette",
+          "aliases": [
+            "Lafayette, LA"
+          ]
+        },
+        {
+          "name": "Shreveport",
+          "slug": "shreveport",
+          "aliases": [
+            "Shreveport, LA"
+          ]
+        },
+        {
+          "name": "Lake Charles",
+          "slug": "lake-charles",
+          "aliases": [
+            "Lake Charles, LA"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Maine",
+      "abbr": "ME",
+      "slug": "maine",
+      "major_cities": [
+        {
+          "name": "Portland",
+          "slug": "portland",
+          "aliases": [
+            "Portland, ME"
+          ]
+        },
+        {
+          "name": "Bar Harbor",
+          "slug": "bar-harbor",
+          "aliases": [
+            "Bar Harbor, ME"
+          ]
+        },
+        {
+          "name": "Bangor",
+          "slug": "bangor",
+          "aliases": [
+            "Bangor, ME"
+          ]
+        },
+        {
+          "name": "Kennebunkport",
+          "slug": "kennebunkport",
+          "aliases": [
+            "Kennebunkport, ME"
+          ]
+        },
+        {
+          "name": "Augusta",
+          "slug": "augusta-maine",
+          "aliases": [
+            "Augusta, ME"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Maryland",
+      "abbr": "MD",
+      "slug": "maryland",
+      "major_cities": [
+        {
+          "name": "Baltimore",
+          "slug": "baltimore",
+          "aliases": [
+            "Baltimore, MD"
+          ]
+        },
+        {
+          "name": "Annapolis",
+          "slug": "annapolis",
+          "aliases": [
+            "Annapolis, MD"
+          ]
+        },
+        {
+          "name": "Ocean City",
+          "slug": "ocean-city",
+          "aliases": [
+            "Ocean City, MD"
+          ]
+        },
+        {
+          "name": "Frederick",
+          "slug": "frederick",
+          "aliases": [
+            "Frederick, MD"
+          ]
+        },
+        {
+          "name": "Bethesda",
+          "slug": "bethesda",
+          "aliases": [
+            "Bethesda, MD"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Massachusetts",
+      "abbr": "MA",
+      "slug": "massachusetts",
+      "major_cities": [
+        {
+          "name": "Boston",
+          "slug": "boston",
+          "aliases": [
+            "Boston, MA"
+          ]
+        },
+        {
+          "name": "Cambridge",
+          "slug": "cambridge",
+          "aliases": [
+            "Cambridge, MA"
+          ]
+        },
+        {
+          "name": "Salem",
+          "slug": "salem",
+          "aliases": [
+            "Salem, MA"
+          ]
+        },
+        {
+          "name": "Provincetown",
+          "slug": "provincetown",
+          "aliases": [
+            "Provincetown, MA"
+          ]
+        },
+        {
+          "name": "Nantucket",
+          "slug": "nantucket",
+          "aliases": [
+            "Nantucket, MA"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Michigan",
+      "abbr": "MI",
+      "slug": "michigan",
+      "major_cities": [
+        {
+          "name": "Detroit",
+          "slug": "detroit",
+          "aliases": [
+            "Detroit, MI"
+          ]
+        },
+        {
+          "name": "Grand Rapids",
+          "slug": "grand-rapids",
+          "aliases": [
+            "Grand Rapids, MI"
+          ]
+        },
+        {
+          "name": "Traverse City",
+          "slug": "traverse-city",
+          "aliases": [
+            "Traverse City, MI"
+          ]
+        },
+        {
+          "name": "Ann Arbor",
+          "slug": "ann-arbor",
+          "aliases": [
+            "Ann Arbor, MI"
+          ]
+        },
+        {
+          "name": "Mackinac Island",
+          "slug": "mackinac-island",
+          "aliases": [
+            "Mackinac Island, MI"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Minnesota",
+      "abbr": "MN",
+      "slug": "minnesota",
+      "major_cities": [
+        {
+          "name": "Minneapolis",
+          "slug": "minneapolis",
+          "aliases": [
+            "Minneapolis, MN"
+          ]
+        },
+        {
+          "name": "Saint Paul",
+          "slug": "saint-paul",
+          "aliases": [
+            "St. Paul",
+            "Saint Paul, MN"
+          ]
+        },
+        {
+          "name": "Duluth",
+          "slug": "duluth",
+          "aliases": [
+            "Duluth, MN"
+          ]
+        },
+        {
+          "name": "Rochester",
+          "slug": "rochester",
+          "aliases": [
+            "Rochester, MN"
+          ]
+        },
+        {
+          "name": "Bloomington",
+          "slug": "bloomington-minnesota",
+          "aliases": [
+            "Bloomington, MN"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mississippi",
+      "abbr": "MS",
+      "slug": "mississippi",
+      "major_cities": [
+        {
+          "name": "Biloxi",
+          "slug": "biloxi",
+          "aliases": [
+            "Biloxi, MS"
+          ]
+        },
+        {
+          "name": "Jackson",
+          "slug": "jackson",
+          "aliases": [
+            "Jackson, MS"
+          ]
+        },
+        {
+          "name": "Gulfport",
+          "slug": "gulfport",
+          "aliases": [
+            "Gulfport, MS"
+          ]
+        },
+        {
+          "name": "Natchez",
+          "slug": "natchez",
+          "aliases": [
+            "Natchez, MS"
+          ]
+        },
+        {
+          "name": "Oxford",
+          "slug": "oxford",
+          "aliases": [
+            "Oxford, MS"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Missouri",
+      "abbr": "MO",
+      "slug": "missouri",
+      "major_cities": [
+        {
+          "name": "St. Louis",
+          "slug": "st-louis",
+          "aliases": [
+            "Saint Louis",
+            "St. Louis, MO"
+          ]
+        },
+        {
+          "name": "Kansas City",
+          "slug": "kansas-city",
+          "aliases": [
+            "Kansas City, MO"
+          ]
+        },
+        {
+          "name": "Branson",
+          "slug": "branson",
+          "aliases": [
+            "Branson, MO"
+          ]
+        },
+        {
+          "name": "Springfield",
+          "slug": "springfield-missouri",
+          "aliases": [
+            "Springfield, MO"
+          ]
+        },
+        {
+          "name": "Columbia",
+          "slug": "columbia",
+          "aliases": [
+            "Columbia, MO"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Montana",
+      "abbr": "MT",
+      "slug": "montana",
+      "major_cities": [
+        {
+          "name": "Bozeman",
+          "slug": "bozeman",
+          "aliases": [
+            "Bozeman, MT"
+          ]
+        },
+        {
+          "name": "Whitefish",
+          "slug": "whitefish",
+          "aliases": [
+            "Whitefish, MT"
+          ]
+        },
+        {
+          "name": "Missoula",
+          "slug": "missoula",
+          "aliases": [
+            "Missoula, MT"
+          ]
+        },
+        {
+          "name": "Billings",
+          "slug": "billings",
+          "aliases": [
+            "Billings, MT"
+          ]
+        },
+        {
+          "name": "Helena",
+          "slug": "helena",
+          "aliases": [
+            "Helena, MT"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nebraska",
+      "abbr": "NE",
+      "slug": "nebraska",
+      "major_cities": [
+        {
+          "name": "Omaha",
+          "slug": "omaha",
+          "aliases": [
+            "Omaha, NE"
+          ]
+        },
+        {
+          "name": "Lincoln",
+          "slug": "lincoln",
+          "aliases": [
+            "Lincoln, NE"
+          ]
+        },
+        {
+          "name": "Kearney",
+          "slug": "kearney",
+          "aliases": [
+            "Kearney, NE"
+          ]
+        },
+        {
+          "name": "Grand Island",
+          "slug": "grand-island",
+          "aliases": [
+            "Grand Island, NE"
+          ]
+        },
+        {
+          "name": "North Platte",
+          "slug": "north-platte",
+          "aliases": [
+            "North Platte, NE"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nevada",
+      "abbr": "NV",
+      "slug": "nevada",
+      "major_cities": [
+        {
+          "name": "Las Vegas",
+          "slug": "las-vegas",
+          "aliases": [
+            "Vegas",
+            "Las Vegas, NV"
+          ]
+        },
+        {
+          "name": "Reno",
+          "slug": "reno",
+          "aliases": [
+            "Reno, NV"
+          ]
+        },
+        {
+          "name": "Lake Tahoe",
+          "slug": "lake-tahoe",
+          "aliases": [
+            "Lake Tahoe, NV",
+            "South Lake Tahoe"
+          ]
+        },
+        {
+          "name": "Carson City",
+          "slug": "carson-city",
+          "aliases": [
+            "Carson City, NV"
+          ]
+        },
+        {
+          "name": "Henderson",
+          "slug": "henderson",
+          "aliases": [
+            "Henderson, NV"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "New Hampshire",
+      "abbr": "NH",
+      "slug": "new-hampshire",
+      "major_cities": [
+        {
+          "name": "Portsmouth",
+          "slug": "portsmouth",
+          "aliases": [
+            "Portsmouth, NH"
+          ]
+        },
+        {
+          "name": "Manchester",
+          "slug": "manchester",
+          "aliases": [
+            "Manchester, NH"
+          ]
+        },
+        {
+          "name": "Concord",
+          "slug": "concord",
+          "aliases": [
+            "Concord, NH"
+          ]
+        },
+        {
+          "name": "North Conway",
+          "slug": "north-conway",
+          "aliases": [
+            "North Conway, NH"
+          ]
+        },
+        {
+          "name": "Hanover",
+          "slug": "hanover",
+          "aliases": [
+            "Hanover, NH"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "New Jersey",
+      "abbr": "NJ",
+      "slug": "new-jersey",
+      "major_cities": [
+        {
+          "name": "Atlantic City",
+          "slug": "atlantic-city",
+          "aliases": [
+            "Atlantic City, NJ"
+          ]
+        },
+        {
+          "name": "Jersey City",
+          "slug": "jersey-city",
+          "aliases": [
+            "Jersey City, NJ"
+          ]
+        },
+        {
+          "name": "Newark",
+          "slug": "newark-new-jersey",
+          "aliases": [
+            "Newark, NJ"
+          ]
+        },
+        {
+          "name": "Cape May",
+          "slug": "cape-may",
+          "aliases": [
+            "Cape May, NJ"
+          ]
+        },
+        {
+          "name": "Princeton",
+          "slug": "princeton",
+          "aliases": [
+            "Princeton, NJ"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "New Mexico",
+      "abbr": "NM",
+      "slug": "new-mexico",
+      "major_cities": [
+        {
+          "name": "Santa Fe",
+          "slug": "santa-fe",
+          "aliases": [
+            "Santa Fe, NM"
+          ]
+        },
+        {
+          "name": "Albuquerque",
+          "slug": "albuquerque",
+          "aliases": [
+            "Albuquerque, NM"
+          ]
+        },
+        {
+          "name": "Taos",
+          "slug": "taos",
+          "aliases": [
+            "Taos, NM"
+          ]
+        },
+        {
+          "name": "Las Cruces",
+          "slug": "las-cruces",
+          "aliases": [
+            "Las Cruces, NM"
+          ]
+        },
+        {
+          "name": "Roswell",
+          "slug": "roswell",
+          "aliases": [
+            "Roswell, NM"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "New York",
+      "abbr": "NY",
+      "slug": "new-york",
+      "major_cities": [
+        {
+          "name": "New York City",
+          "slug": "new-york-city",
+          "aliases": [
+            "NYC",
+            "New York, NY"
+          ]
+        },
+        {
+          "name": "Buffalo",
+          "slug": "buffalo",
+          "aliases": [
+            "Buffalo, NY"
+          ]
+        },
+        {
+          "name": "Albany",
+          "slug": "albany",
+          "aliases": [
+            "Albany, NY"
+          ]
+        },
+        {
+          "name": "Rochester",
+          "slug": "rochester-new-york",
+          "aliases": [
+            "Rochester, NY"
+          ]
+        },
+        {
+          "name": "Syracuse",
+          "slug": "syracuse",
+          "aliases": [
+            "Syracuse, NY"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "North Carolina",
+      "abbr": "NC",
+      "slug": "north-carolina",
+      "major_cities": [
+        {
+          "name": "Charlotte",
+          "slug": "charlotte",
+          "aliases": [
+            "Charlotte, NC"
+          ]
+        },
+        {
+          "name": "Asheville",
+          "slug": "asheville",
+          "aliases": [
+            "Asheville, NC"
+          ]
+        },
+        {
+          "name": "Raleigh",
+          "slug": "raleigh",
+          "aliases": [
+            "Raleigh, NC"
+          ]
+        },
+        {
+          "name": "Wilmington",
+          "slug": "wilmington-north-carolina",
+          "aliases": [
+            "Wilmington, NC"
+          ]
+        },
+        {
+          "name": "Durham",
+          "slug": "durham",
+          "aliases": [
+            "Durham, NC"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "North Dakota",
+      "abbr": "ND",
+      "slug": "north-dakota",
+      "major_cities": [
+        {
+          "name": "Fargo",
+          "slug": "fargo",
+          "aliases": [
+            "Fargo, ND"
+          ]
+        },
+        {
+          "name": "Bismarck",
+          "slug": "bismarck",
+          "aliases": [
+            "Bismarck, ND"
+          ]
+        },
+        {
+          "name": "Medora",
+          "slug": "medora",
+          "aliases": [
+            "Medora, ND"
+          ]
+        },
+        {
+          "name": "Grand Forks",
+          "slug": "grand-forks",
+          "aliases": [
+            "Grand Forks, ND"
+          ]
+        },
+        {
+          "name": "Minot",
+          "slug": "minot",
+          "aliases": [
+            "Minot, ND"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ohio",
+      "abbr": "OH",
+      "slug": "ohio",
+      "major_cities": [
+        {
+          "name": "Columbus",
+          "slug": "columbus",
+          "aliases": [
+            "Columbus, OH"
+          ]
+        },
+        {
+          "name": "Cleveland",
+          "slug": "cleveland",
+          "aliases": [
+            "Cleveland, OH"
+          ]
+        },
+        {
+          "name": "Cincinnati",
+          "slug": "cincinnati",
+          "aliases": [
+            "Cincinnati, OH"
+          ]
+        },
+        {
+          "name": "Toledo",
+          "slug": "toledo",
+          "aliases": [
+            "Toledo, OH"
+          ]
+        },
+        {
+          "name": "Dayton",
+          "slug": "dayton",
+          "aliases": [
+            "Dayton, OH"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Oklahoma",
+      "abbr": "OK",
+      "slug": "oklahoma",
+      "major_cities": [
+        {
+          "name": "Oklahoma City",
+          "slug": "oklahoma-city",
+          "aliases": [
+            "OKC",
+            "Oklahoma City, OK"
+          ]
+        },
+        {
+          "name": "Tulsa",
+          "slug": "tulsa",
+          "aliases": [
+            "Tulsa, OK"
+          ]
+        },
+        {
+          "name": "Norman",
+          "slug": "norman",
+          "aliases": [
+            "Norman, OK"
+          ]
+        },
+        {
+          "name": "Broken Bow",
+          "slug": "broken-bow",
+          "aliases": [
+            "Broken Bow, OK"
+          ]
+        },
+        {
+          "name": "Stillwater",
+          "slug": "stillwater",
+          "aliases": [
+            "Stillwater, OK"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Oregon",
+      "abbr": "OR",
+      "slug": "oregon",
+      "major_cities": [
+        {
+          "name": "Portland",
+          "slug": "portland-oregon",
+          "aliases": [
+            "Portland, OR"
+          ]
+        },
+        {
+          "name": "Bend",
+          "slug": "bend",
+          "aliases": [
+            "Bend, OR"
+          ]
+        },
+        {
+          "name": "Eugene",
+          "slug": "eugene",
+          "aliases": [
+            "Eugene, OR"
+          ]
+        },
+        {
+          "name": "Ashland",
+          "slug": "ashland",
+          "aliases": [
+            "Ashland, OR"
+          ]
+        },
+        {
+          "name": "Cannon Beach",
+          "slug": "cannon-beach",
+          "aliases": [
+            "Cannon Beach, OR"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pennsylvania",
+      "abbr": "PA",
+      "slug": "pennsylvania",
+      "major_cities": [
+        {
+          "name": "Philadelphia",
+          "slug": "philadelphia",
+          "aliases": [
+            "Philadelphia, PA"
+          ]
+        },
+        {
+          "name": "Pittsburgh",
+          "slug": "pittsburgh",
+          "aliases": [
+            "Pittsburgh, PA"
+          ]
+        },
+        {
+          "name": "Hershey",
+          "slug": "hershey",
+          "aliases": [
+            "Hershey, PA"
+          ]
+        },
+        {
+          "name": "Gettysburg",
+          "slug": "gettysburg",
+          "aliases": [
+            "Gettysburg, PA"
+          ]
+        },
+        {
+          "name": "Lancaster",
+          "slug": "lancaster",
+          "aliases": [
+            "Lancaster, PA"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rhode Island",
+      "abbr": "RI",
+      "slug": "rhode-island",
+      "major_cities": [
+        {
+          "name": "Newport",
+          "slug": "newport",
+          "aliases": [
+            "Newport, RI"
+          ]
+        },
+        {
+          "name": "Providence",
+          "slug": "providence",
+          "aliases": [
+            "Providence, RI"
+          ]
+        },
+        {
+          "name": "Narragansett",
+          "slug": "narragansett",
+          "aliases": [
+            "Narragansett, RI"
+          ]
+        },
+        {
+          "name": "Westerly",
+          "slug": "westerly",
+          "aliases": [
+            "Westerly, RI"
+          ]
+        },
+        {
+          "name": "Bristol",
+          "slug": "bristol",
+          "aliases": [
+            "Bristol, RI"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "South Carolina",
+      "abbr": "SC",
+      "slug": "south-carolina",
+      "major_cities": [
+        {
+          "name": "Charleston",
+          "slug": "charleston",
+          "aliases": [
+            "Charleston, SC"
+          ]
+        },
+        {
+          "name": "Myrtle Beach",
+          "slug": "myrtle-beach",
+          "aliases": [
+            "Myrtle Beach, SC"
+          ]
+        },
+        {
+          "name": "Greenville",
+          "slug": "greenville",
+          "aliases": [
+            "Greenville, SC"
+          ]
+        },
+        {
+          "name": "Hilton Head Island",
+          "slug": "hilton-head-island",
+          "aliases": [
+            "Hilton Head Island, SC"
+          ]
+        },
+        {
+          "name": "Columbia",
+          "slug": "columbia-south-carolina",
+          "aliases": [
+            "Columbia, SC"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "South Dakota",
+      "abbr": "SD",
+      "slug": "south-dakota",
+      "major_cities": [
+        {
+          "name": "Rapid City",
+          "slug": "rapid-city",
+          "aliases": [
+            "Rapid City, SD"
+          ]
+        },
+        {
+          "name": "Sioux Falls",
+          "slug": "sioux-falls",
+          "aliases": [
+            "Sioux Falls, SD"
+          ]
+        },
+        {
+          "name": "Deadwood",
+          "slug": "deadwood",
+          "aliases": [
+            "Deadwood, SD"
+          ]
+        },
+        {
+          "name": "Custer",
+          "slug": "custer",
+          "aliases": [
+            "Custer, SD"
+          ]
+        },
+        {
+          "name": "Pierre",
+          "slug": "pierre",
+          "aliases": [
+            "Pierre, SD"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tennessee",
+      "abbr": "TN",
+      "slug": "tennessee",
+      "major_cities": [
+        {
+          "name": "Nashville",
+          "slug": "nashville-tennessee",
+          "aliases": [
+            "Nashville, TN"
+          ]
+        },
+        {
+          "name": "Memphis",
+          "slug": "memphis",
+          "aliases": [
+            "Memphis, TN"
+          ]
+        },
+        {
+          "name": "Gatlinburg",
+          "slug": "gatlinburg",
+          "aliases": [
+            "Gatlinburg, TN"
+          ]
+        },
+        {
+          "name": "Chattanooga",
+          "slug": "chattanooga",
+          "aliases": [
+            "Chattanooga, TN"
+          ]
+        },
+        {
+          "name": "Knoxville",
+          "slug": "knoxville",
+          "aliases": [
+            "Knoxville, TN"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Texas",
+      "abbr": "TX",
+      "slug": "texas",
+      "major_cities": [
+        {
+          "name": "Austin",
+          "slug": "austin",
+          "aliases": [
+            "Austin, TX"
+          ]
+        },
+        {
+          "name": "San Antonio",
+          "slug": "san-antonio",
+          "aliases": [
+            "San Antonio, TX"
+          ]
+        },
+        {
+          "name": "Houston",
+          "slug": "houston",
+          "aliases": [
+            "Houston, TX"
+          ]
+        },
+        {
+          "name": "Dallas",
+          "slug": "dallas",
+          "aliases": [
+            "Dallas, TX"
+          ]
+        },
+        {
+          "name": "Fort Worth",
+          "slug": "fort-worth",
+          "aliases": [
+            "Fort Worth, TX"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Utah",
+      "abbr": "UT",
+      "slug": "utah",
+      "major_cities": [
+        {
+          "name": "Salt Lake City",
+          "slug": "salt-lake-city",
+          "aliases": [
+            "Salt Lake City, UT"
+          ]
+        },
+        {
+          "name": "Moab",
+          "slug": "moab",
+          "aliases": [
+            "Moab, UT"
+          ]
+        },
+        {
+          "name": "Park City",
+          "slug": "park-city",
+          "aliases": [
+            "Park City, UT"
+          ]
+        },
+        {
+          "name": "St. George",
+          "slug": "st-george",
+          "aliases": [
+            "St. George, UT"
+          ]
+        },
+        {
+          "name": "Bryce",
+          "slug": "bryce",
+          "aliases": [
+            "Bryce Canyon City, UT",
+            "Bryce, UT"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vermont",
+      "abbr": "VT",
+      "slug": "vermont",
+      "major_cities": [
+        {
+          "name": "Burlington",
+          "slug": "burlington",
+          "aliases": [
+            "Burlington, VT"
+          ]
+        },
+        {
+          "name": "Stowe",
+          "slug": "stowe",
+          "aliases": [
+            "Stowe, VT"
+          ]
+        },
+        {
+          "name": "Montpelier",
+          "slug": "montpelier",
+          "aliases": [
+            "Montpelier, VT"
+          ]
+        },
+        {
+          "name": "Woodstock",
+          "slug": "woodstock",
+          "aliases": [
+            "Woodstock, VT"
+          ]
+        },
+        {
+          "name": "Manchester",
+          "slug": "manchester-vermont",
+          "aliases": [
+            "Manchester, VT"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Virginia",
+      "abbr": "VA",
+      "slug": "virginia",
+      "major_cities": [
+        {
+          "name": "Virginia Beach",
+          "slug": "virginia-beach",
+          "aliases": [
+            "Virginia Beach, VA"
+          ]
+        },
+        {
+          "name": "Richmond",
+          "slug": "richmond",
+          "aliases": [
+            "Richmond, VA"
+          ]
+        },
+        {
+          "name": "Charlottesville",
+          "slug": "charlottesville",
+          "aliases": [
+            "Charlottesville, VA"
+          ]
+        },
+        {
+          "name": "Williamsburg",
+          "slug": "williamsburg",
+          "aliases": [
+            "Williamsburg, VA"
+          ]
+        },
+        {
+          "name": "Alexandria",
+          "slug": "alexandria",
+          "aliases": [
+            "Alexandria, VA"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Washington",
+      "abbr": "WA",
+      "slug": "washington",
+      "major_cities": [
+        {
+          "name": "Seattle",
+          "slug": "seattle",
+          "aliases": [
+            "Seattle, WA"
+          ]
+        },
+        {
+          "name": "Spokane",
+          "slug": "spokane",
+          "aliases": [
+            "Spokane, WA"
+          ]
+        },
+        {
+          "name": "Tacoma",
+          "slug": "tacoma",
+          "aliases": [
+            "Tacoma, WA"
+          ]
+        },
+        {
+          "name": "Olympia",
+          "slug": "olympia",
+          "aliases": [
+            "Olympia, WA"
+          ]
+        },
+        {
+          "name": "Leavenworth",
+          "slug": "leavenworth",
+          "aliases": [
+            "Leavenworth, WA"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "West Virginia",
+      "abbr": "WV",
+      "slug": "west-virginia",
+      "major_cities": [
+        {
+          "name": "Charleston",
+          "slug": "charleston-west-virginia",
+          "aliases": [
+            "Charleston, WV"
+          ]
+        },
+        {
+          "name": "Morgantown",
+          "slug": "morgantown",
+          "aliases": [
+            "Morgantown, WV"
+          ]
+        },
+        {
+          "name": "Harpers Ferry",
+          "slug": "harpers-ferry",
+          "aliases": [
+            "Harpers Ferry, WV"
+          ]
+        },
+        {
+          "name": "Lewisburg",
+          "slug": "lewisburg",
+          "aliases": [
+            "Lewisburg, WV"
+          ]
+        },
+        {
+          "name": "Wheeling",
+          "slug": "wheeling",
+          "aliases": [
+            "Wheeling, WV"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Wisconsin",
+      "abbr": "WI",
+      "slug": "wisconsin",
+      "major_cities": [
+        {
+          "name": "Milwaukee",
+          "slug": "milwaukee",
+          "aliases": [
+            "Milwaukee, WI"
+          ]
+        },
+        {
+          "name": "Madison",
+          "slug": "madison",
+          "aliases": [
+            "Madison, WI"
+          ]
+        },
+        {
+          "name": "Green Bay",
+          "slug": "green-bay",
+          "aliases": [
+            "Green Bay, WI"
+          ]
+        },
+        {
+          "name": "Wisconsin Dells",
+          "slug": "wisconsin-dells",
+          "aliases": [
+            "Wisconsin Dells, WI"
+          ]
+        },
+        {
+          "name": "Door County",
+          "slug": "door-county",
+          "aliases": [
+            "Door County, WI"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Wyoming",
+      "abbr": "WY",
+      "slug": "wyoming",
+      "major_cities": [
+        {
+          "name": "Jackson",
+          "slug": "jackson-wyoming",
+          "aliases": [
+            "Jackson, WY",
+            "Jackson Hole"
+          ]
+        },
+        {
+          "name": "Cheyenne",
+          "slug": "cheyenne",
+          "aliases": [
+            "Cheyenne, WY"
+          ]
+        },
+        {
+          "name": "Cody",
+          "slug": "cody",
+          "aliases": [
+            "Cody, WY"
+          ]
+        },
+        {
+          "name": "Laramie",
+          "slug": "laramie",
+          "aliases": [
+            "Laramie, WY"
+          ]
+        },
+        {
+          "name": "Sheridan",
+          "slug": "sheridan",
+          "aliases": [
+            "Sheridan, WY"
+          ]
+        }
+      ]
+    }
+  ]
+}
