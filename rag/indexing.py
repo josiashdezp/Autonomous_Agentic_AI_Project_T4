@@ -102,17 +102,3 @@ class TravelIndexer:
             print("Current collection count:", self.vector_store._collection.count())
 
         return inserted
-
-    # def build_index(self, docs: list[TravelDocument]) -> int:
-    #     all_sections: list[TravelSection] = []
-    #
-    #     for doc in docs:
-    #         doc.content = self.cleaner.clean(doc.content)
-    #         sections = self.section_splitter.split_document(doc)
-    #         all_sections.extend(sections)
-    #
-    #     chunked_docs = self.converter.from_sections(all_sections)
-    #     if chunked_docs:
-    #         self.vector_store.add_documents(chunked_docs)
-    #
-    #     return len(chunked_docs)
