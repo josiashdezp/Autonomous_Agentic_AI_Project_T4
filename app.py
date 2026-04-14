@@ -15,7 +15,7 @@ import streamlit as st
 from dotenv import load_dotenv
 from openai import OpenAI
 
-from agents.agent import build_graph, get_initial_state
+from agents.agent_new import build_graph, get_initial_state
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -378,7 +378,6 @@ st.markdown("""
 def get_default_messages():
     return []
 
-
 def safe_markdown(text: str):
     """Escape bare dollar signs to prevent Streamlit LaTeX rendering."""
     escaped = re.sub(r'(?<!\\)\$', r'\\$', text)
@@ -395,7 +394,6 @@ def _null_guard(val: str | None) -> str:
     if not val or str(val).strip().lower() in ("null", "none", "n/a"):
         return ""
     return val
-
 
 def _partial_title(agent: dict) -> str:
     destination   = _null_guard(agent.get("destination", "")).split(",")[0].strip()
@@ -543,7 +541,6 @@ def render_grocery_form(agent: dict):
         st.session_state.grocery_form_done      = True
         st.rerun()
 
-
 def render_grocery_list(grocery_data: dict, agent: dict):
     """Render the generated grocery list with prices and prep tips."""
     budget_mode = grocery_data.get("budget_mode", "group")
@@ -570,7 +567,6 @@ def render_grocery_list(grocery_data: dict, agent: dict):
         for tip in grocery_data["prep_tips"]:
             st.markdown(f"- {tip}")
     st.markdown("</div>", unsafe_allow_html=True)
-
 
 def render_checklist(checklist_data: dict):
     """Render interactive checklist — clean card with progress bar, section counts, no emoji clutter."""
@@ -693,7 +689,6 @@ def _serialise_agent_state(agent: dict) -> dict:
             pass
     return safe
 
-
 def _save_draft(agent: dict, msgs: list):
     """Persist the in-progress session to disk so state survives a page refresh,
     even before budget is set. Cleared when a new trip starts."""
@@ -708,7 +703,6 @@ def _save_draft(agent: dict, msgs: list):
             )
     except Exception:
         pass
-
 
 def save_current_chat():
     msgs  = st.session_state.messages
@@ -755,7 +749,6 @@ def save_current_chat():
             "agent_state": agent_snapshot,
         })
     save_chats(st.session_state.chat_history)
-
 
 def load_chat(chat_id: str):
     for chat in st.session_state.chat_history:

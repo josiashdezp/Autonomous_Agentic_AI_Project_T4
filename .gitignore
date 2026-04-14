@@ -5,6 +5,7 @@
 
 # ChromaDB vector store (auto-rebuilds on first run)
 data/chroma_db/
+rag/chroma_travel_db/
 
 # Python
 __pycache__/
@@ -32,5 +33,9 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+
+# Other Temporary files and folders for local issues
+rag/tmp/
 
 echo "data/user.json" >> .gitignore
