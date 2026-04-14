@@ -327,7 +327,7 @@ rag = TravelRAGService(vector_store)
 
 result = rag.search(
     query="best places to visit",
-    destination="New York City"
+    city="New York City"
 )
 ```
 

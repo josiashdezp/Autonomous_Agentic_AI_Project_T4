@@ -1,12 +1,8 @@
 from __future__ import annotations
-
 from typing import Any, Dict, List, Optional
-
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
-
 from rag.rag_config import COLLECTION_NAME, EMBEDDING_MODEL, PERSIST_DIRECTORY, get_openai_key
-
 
 class TravelRAGService:
     """
@@ -46,7 +42,7 @@ class TravelRAGService:
 
     def _build_filter(
         self,
-        destination: Optional[str] = None,
+        city: Optional[str] = None,
         state: Optional[str] = None,
         category: Optional[str] = None,
         source: Optional[str] = None,
@@ -56,8 +52,8 @@ class TravelRAGService:
         """
         clauses: List[Dict[str, Any]] = []
 
-        if destination:
-            clauses.append({"destination": destination})
+        if city:
+            clauses.append({"city": city})
         if state:
             clauses.append({"state": state})
         if category:
@@ -75,7 +71,7 @@ class TravelRAGService:
     def search(
         self,
         query: str,
-        destination: Optional[str] = None,
+        city: Optional[str] = None,
         state: Optional[str] = None,
         category: Optional[str] = None,
         source: Optional[str] = None,
@@ -88,7 +84,7 @@ class TravelRAGService:
         LangGraph nodes, tools, or direct debugging.
         """
         metadata_filter = self._build_filter(
-            destination=destination,
+            city=city,
             state=state,
             category=category,
             source=source,
@@ -110,7 +106,7 @@ class TravelRAGService:
                     "content": doc.page_content,
                     "metadata": metadata,
                     "source": metadata.get("source"),
-                    "destination": metadata.get("destination"),
+                    "city": metadata.get("city"),
                     "state": metadata.get("state"),
                     "category": metadata.get("category"),
                     "heading": metadata.get("heading"),
@@ -124,7 +120,7 @@ class TravelRAGService:
     def search_with_scores(
         self,
         query: str,
-        destination: Optional[str] = None,
+        city: Optional[str] = None,
         state: Optional[str] = None,
         category: Optional[str] = None,
         source: Optional[str] = None,
@@ -135,7 +131,7 @@ class TravelRAGService:
         Lower scores are generally better in Chroma similarity_distance output.
         """
         metadata_filter = self._build_filter(
-            destination=destination,
+            city=city,
             state=state,
             category=category,
             source=source,
@@ -158,7 +154,7 @@ class TravelRAGService:
                     "content": doc.page_content,
                     "metadata": metadata,
                     "source": metadata.get("source"),
-                    "destination": metadata.get("destination"),
+                    "city": metadata.get("city"),
                     "state": metadata.get("state"),
                     "category": metadata.get("category"),
                     "heading": metadata.get("heading"),
@@ -189,7 +185,7 @@ class TravelRAGService:
             if item.get("source"):
                 header_bits.append(f"Source: {item['source']}")
             if item.get("destination"):
-                header_bits.append(f"Destination: {item['destination']}")
+                header_bits.append(f"City: {item['city']}")
             if item.get("state"):
                 header_bits.append(f"State: {item['state']}")
             if item.get("category"):
@@ -214,7 +210,7 @@ class TravelRAGService:
     def retrieve_context(
         self,
         query: str,
-        destination: Optional[str] = None,
+        city: Optional[str] = None,
         state: Optional[str] = None,
         category: Optional[str] = None,
         source: Optional[str] = None,
@@ -227,7 +223,7 @@ class TravelRAGService:
         """
         results = self.search(
             query=query,
-            destination=destination,
+            city=city,
             state=state,
             category=category,
             source=source,

@@ -29,14 +29,13 @@ class SectionSplitter:
                     metadata={
                         **doc.metadata,
                         "source": doc.source,
-                        "destination": doc.destination,
+                        "city": doc.destination,
                         "state": doc.state,
                         "category": doc.category,
                         "heading": heading,
                     },
                 )
             )
-
         return sections
 
 ##---------------------------------------------------------------------

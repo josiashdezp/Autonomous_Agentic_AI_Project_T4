@@ -15,7 +15,7 @@ import streamlit as st
 from dotenv import load_dotenv
 from openai import OpenAI
 
-from agents.agent import build_graph, get_initial_state
+from agents.agent_new import build_graph, get_initial_state
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
