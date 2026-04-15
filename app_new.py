@@ -15,7 +15,7 @@ import streamlit as st
 from dotenv import load_dotenv
 from openai import OpenAI
 
-from project_agents.agent_new_2 import build_graph, get_initial_state
+from agents.agent_new_2 import build_graph, get_initial_state
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -995,7 +995,7 @@ for i, msg in enumerate(st.session_state.messages):
             else:
                 with st.spinner("Building your personalized grocery list..."):
                     try:
-                        from agents.agent import generate_grocery_list
+                        from agents.agent_new_2 import generate_grocery_list
                         _budget      = _agent.get("budget", 0)
                         _btype       = _agent.get("budget_type", "total")
                         _ntrav       = _agent.get("num_travelers", 1)
@@ -1028,7 +1028,7 @@ for i, msg in enumerate(st.session_state.messages):
         if st.session_state.show_checklist and not checklist_done:
             with st.spinner("Building your checklist..."):
                 try:
-                    from agents.agent import generate_travel_checklist
+                    from agents.agent_new_2 import generate_travel_checklist
                     st.session_state.checklist_data = generate_travel_checklist(
                         destination   = _agent.get("destination", ""),
                         num_days      = _agent.get("num_days", 3),
