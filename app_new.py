@@ -15,7 +15,7 @@ import streamlit as st
 from dotenv import load_dotenv
 from openai import OpenAI
 
-from agents.agent_new_2 import build_graph, get_initial_state
+from project_agents.agent_new_2 import build_graph, get_initial_state
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -940,6 +940,27 @@ for i, msg in enumerate(st.session_state.messages):
             and _agent.get("transport") == "driving"
             and st.session_state.get("transport_calc")):
         render_transport_card(st.session_state.transport_calc)
+        
+# LLM Judge result
+    if is_last_msg and msg["role"] == "assistant" and is_done:
+        jr = st.session_state.get("judge_result")
+        if jr:
+            score  = jr.get("score", "?")
+            status = jr.get("status", "?")
+            feedback = jr.get("feedback", "")
+            dims = jr.get("dimensions", {})
+            with st.expander("🔍 LLM Judge Evaluation", expanded=False):
+                col1, col2 = st.columns(2)
+                with col1:
+                    st.metric("Status", status)
+                with col2:
+                    st.metric("Score", f"{score}/10")
+                st.write(f"**Verdict:** {feedback}")
+                if dims:
+                    st.write("**Dimensions:**")
+                    for k, v in dims.items():
+                        icon = "✅" if v == "PASS" else "❌"
+                        st.write(f"{icon} {k.replace('_', ' ').title()}: {v}")
 
     # Budget guardrail card removed — warnings shown in-chat before the itinerary.
     # ── Grocery & Checklist section ─────────────────────────────────────────
