@@ -1425,7 +1425,7 @@ PASS only if ALL 4 dimensions pass."""
             result = {"status": "PASS", "score": 7,
                       "feedback": f"Judge unavailable: {e}", "fallback": True}
             status = "PASS"
-
+    print(f"LLM JUDGE: status={result.get('status')} score={result.get('score')} attempts={attempt}")
     result["attempts"] = attempt
     logger.info("LLM Judge result: status=%s score=%s attempts=%s",
                 result.get("status"), result.get("score"), attempt)
