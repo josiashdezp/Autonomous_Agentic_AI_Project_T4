@@ -106,6 +106,95 @@ Runs when the user sends a message after an itinerary has been generated. Its jo
 
 ---
 
+---
+
+## RAG Module
+
+TripBuddy's itineraries are grounded by a Retrieval-Augmented Generation layer that provides the `generate_node` with curated, destination-specific travel knowledge before the itinerary prompt is sent to the LLM.
+
+### What it does
+
+Without RAG, the LLM relies entirely on training data to name attractions, estimate prices, and describe neighborhoods — information that is often outdated or hallucinated. The RAG module solves this by pre-indexing content from multiple travel sources into a Chroma vector database and retrieving the most relevant passages at generation time.
+
+### Data sources
+
+Content is scraped and indexed from six enabled sources, organized by category:
+
+| Source | Category | Scope |
+|---|---|---|
+| Wikivoyage | Activities & attractions | City |
+| VisitTheUSA | Activities & attractions | City |
+| Recreation.gov | Campsite prices | City |
+| The Dyrt | Campground prices | State |
+| Expatistan | Daily / food / lodging budgets | City |
+| GasBuddy | Weekly gas prices | State |
+
+### Pipeline
+
+```
+SOURCE_REGISTRY (rag_config.py)
+        |
+        v
+Ingestors x6 (ingestors.py)  -- scrape + parse each source
+        |
+        v
+TravelDocument (structures.py)  -- structured data model
+        |
+        v
+TravelTextCleaner (indexing.py)  -- noise removal
+        |
+        v
+SectionSplitter (splitters.py)  -- heading-based semantic sections
+        |
+        v
+TravelSection (structures.py)
+        |
+        v
+RecursiveCharacterTextSplitter  -- chunk_size=800, overlap=120
+        |
+        v
+OpenAI text-embedding-3-small
+        |
+        v
+Chroma Vector DB (data/chroma_db/)
+        |
+        v
+TravelRAGService (service.py)  -- similarity search + context formatting
+        |
+        v
+generate_node
+```
+
+### How retrieval works
+
+`TravelRAGService.retrieve_context()` runs a similarity search filtered by city and state, returning the top-k most relevant passages formatted as a single context string. The `generate_node` prepends this context to the itinerary prompt so the LLM has grounded facts to draw from.
+
+Metadata filters available at query time: `city`, `state`, `category`, `source`.
+
+### Setup
+
+The RAG index must be available before running TripBuddy. Choose one option:
+
+**Option A — Use the prebuilt DB (recommended)**
+
+Extract `chroma_db.zip` into `data/`:
+
+```
+data/chroma_db/
+    chroma.sqlite3
+    <uuid folders>
+```
+
+**Option B — Rebuild from scratch**
+
+```bash
+python rag/build_rag_index.py
+```
+
+Requires a valid `OPENAI_API_KEY`. Scraping all cities takes several minutes.
+
+---
+
 ## Features
 
 - **Conversational trip planning** -- collects all required fields through natural back-and-forth conversation
