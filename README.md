@@ -104,7 +104,6 @@ Runs when the user sends a message after an itinerary has been generated. Its jo
 - Detects budget changes and uses a targeted redistribution prompt so the new itinerary respects the updated total.
 - Detects a transport switch from flying to driving and asks for the car before regenerating so gas costs can be included.
 
----
 
 ---
 
