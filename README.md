@@ -18,6 +18,8 @@ TripBuddy is a multi-agent system built with LangGraph, GPT-4o-mini, and Streaml
 | LLM | GPT-4o-mini (OpenAI) |
 | Frontend | Streamlit |
 | State persistence | LangGraph MemorySaver |
+| Observability | LangSmith |
+| LLM Judge | GPT-4o-mini (secondary evaluation call) |
 | Vehicle data | NHTSA vPIC API (free, no key needed) |
 | Gas prices | US EIA weekly average |
 
@@ -31,13 +33,16 @@ TripBuddy uses a four-node LangGraph pipeline. Each node reads from a shared `Tr
 User message
       |
       v
+[input guardrails: PII masking + safety filter]
+      |
+      v
 parse_input_node
       |
       v
 clarify_node  <--(loops until all fields collected)
       |
       v
-generate_node
+generate_node --> [LLM judge: scores + PASS/FAIL]
       |
       v
 revise_node   <--(handles post-generation edits)
@@ -47,6 +52,7 @@ revise_node   <--(handles post-generation edits)
 
 Runs on every user message. Its job is to extract structured trip fields from free-form text and write them into state.
 
+- Runs PII masking and safety filtering on the raw user message before any other logic; blocks the message entirely if the safety filter fires, or redacts sensitive data and continues if PII is detected.
 - Sends the latest user message plus the current state (as JSON) to the LLM so it knows what is already collected and only extracts what is missing.
 - Applies normalization before storing: "whole group" and "together" become `"total"`, "per head" and "pp" become `"per_person"`, "all" for cuisine becomes `"all cuisines"`.
 - Handles abbreviated vehicle input ("toy cam", "ford 150", "honda crv") by running a local lookup table first and falling back to the LLM only for unknown vehicles.
@@ -94,6 +100,7 @@ Runs once all required fields are collected. Its job is to produce the full itin
 - Builds a budget breakdown table where the LLM fills in per-category amounts (transport, accommodation, food, activities) that must sum to the total budget.
 - Runs `evaluate_budget_guardrail` again with the completed itinerary for a more accurate verdict than the early check.
 - Returns the itinerary as a markdown string plus the budget guardrail result.
+- Passes the completed itinerary to a secondary LLM judge that scores it across four dimensions (context precision, tool correction, completeness, hallucination) and returns a PASS or FAIL verdict with a score out of 10. A failing score triggers a retry up to two attempts before the result is returned.
 
 ### `revise_node`
 
@@ -200,6 +207,8 @@ Requires a valid `OPENAI_API_KEY`. Scraping all cities takes several minutes.
 - **Vehicle inference** -- resolves abbreviations and typos to full make/model names before doing any capacity or cost calculations
 - **Car capacity guardrail** -- blocks generation until the group-size-versus-vehicle-capacity conflict is explicitly resolved
 - **Budget guardrail** -- runs before and after generation; $100+/person/day is green, $60-100 is yellow, below $60 or transport-exceeds-budget is red
+- **Input guardrails** -- PII masking redacts emails, phone numbers, SSNs, and credit card numbers from every message before any LLM call; safety filter blocks harmful content including jailbreak attempts, prompt injection, and developer mode bypass
+- **LLM Judge** -- a secondary LLM scores every generated itinerary across four dimensions (context precision, tool correction, completeness, hallucination) and returns a PASS or FAIL verdict with a score out of 10; a failing score triggers an automatic retry up to two attempts before the result is surfaced to the user
 - **Road trip cost calculator** -- live gas prices via EIA, mileage from routing, split across cars and travelers
 - **International redirect** -- vibe-matched US city suggestions when a non-US destination is named
 - **Grocery list generator** -- personalized to group size, dietary restrictions, and trip duration
@@ -212,9 +221,12 @@ Requires a valid `OPENAI_API_KEY`. Scraping all cities takes several minutes.
 
 ```
 .
-+-- app.py                  # Streamlit frontend and session management
++-- app_new.py              # Streamlit frontend and session management
 +-- agents/
-|   +-- agent.py            # All LangGraph nodes, state, helpers
+|   +-- agent_new_2.py      # All LangGraph nodes, state, helpers
++-- rag/
+|   +-- service.py          # RAG retrieval service
+|   +-- build_rag_index.py  # Builds the Chroma vector index
 +-- data/
 |   +-- user.json           # User profile
 |   +-- chats.json          # Saved chat history
@@ -228,7 +240,7 @@ Requires a valid `OPENAI_API_KEY`. Scraping all cities takes several minutes.
 
 ## Setup
 
-**Prerequisites:** Python 3.10+, OpenAI API key
+**Prerequisites:** Python 3.10+, OpenAI API key, LangSmith API key
 
 ```bash
 git clone <repo-url>
@@ -236,8 +248,12 @@ cd <repo>
 pip install -r requirements.txt
 
 export OPENAI_API_KEY=your_key_here
+export LANGCHAIN_API_KEY=your_langsmith_key_here
+export LANGCHAIN_TRACING_V2=true
+export LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
+export LANGCHAIN_PROJECT=tripbuddy
 
-streamlit run app.py
+PYTHONPATH=. streamlit run app_new.py
 ```
 
 ---
@@ -247,6 +263,10 @@ streamlit run app.py
 | Variable | Required | Description |
 |---|---|---|
 | `OPENAI_API_KEY` | Yes | OpenAI API key for GPT-4o-mini |
+| `LANGCHAIN_API_KEY` | Yes | LangSmith API key for tracing |
+| `LANGCHAIN_TRACING_V2` | Yes | Set to `true` to enable tracing |
+| `LANGCHAIN_ENDPOINT` | Yes | Set to `https://api.smith.langchain.com` |
+| `LANGCHAIN_PROJECT` | Yes | Project name shown in LangSmith dashboard |
 
 ---
 
@@ -254,6 +274,7 @@ streamlit run app.py
 
 ```
 User:  I want to go to Nashville for 4 days with a $500 budget.
+Bot:   [input guardrails run]
 Bot:   Where are you traveling from?
 User:  Dallas, TX
 Bot:   Flying or driving?
@@ -266,6 +287,7 @@ User:  just 4 of us
 Bot:   Got it -- 4 people. What is your vibe?
        [collects remaining fields]
 Bot:   [generates 4-day Nashville itinerary with budget breakdown and road trip costs]
+Bot:   [LLM judge scores itinerary -- PASS 9/10]
 ```
 
 ---
