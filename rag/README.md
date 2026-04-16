@@ -1,4 +1,4 @@
-# 📘 Travel RAG Module (Updated)
+# 📘 Travel RAG Module
 
 <p align="left">
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue" alt="Python">
@@ -47,19 +47,19 @@ You MUST do one of the following:
 1. Locate:
 
 ```text
-chroma_travel_db.zip
+chroma_db.zip
 ```
 
 2. Extract it into:
 
 ```text
-/rag/
+/data/
 ```
 
 Final structure:
 
 ```text
-/rag/chroma_travel_db/
+/data/chroma_db/
     chroma.sqlite3
     <uuid folders>
 ```
@@ -79,7 +79,7 @@ This will:
 * scrape sources
 * process documents
 * generate embeddings
-* build the vector DB
+* build the vector DB at `data/chroma_db/`
 
 ⚠️ Requires valid OpenAI API key and may take time.
 
@@ -143,6 +143,8 @@ Embeddings (OpenAI)
 Chroma Vector Store
         ↓
 Retrieval Service
+        ↓
+LangGraph Agent
 ```
 
 ```mermaid
@@ -162,12 +164,13 @@ flowchart TD
 
     G --> H[Embeddings<br>OpenAI]
 
-    H --> I[Chroma Vector DB<br>chroma_travel_db]
+    H --> I[Chroma Vector DB<br>data/chroma_db]
 
     I --> J[Retrieval Layer<br>TravelRAGService]
 
     J --> K[LangGraph Agent]
 ```
+
 ---
 
 ## Data Sources
@@ -185,16 +188,17 @@ This controls:
 * scraping depth
 * parser (ingestor) class
 
-Examples include:
-
-* Wikivoyage (depth-1 scraping)
-* VisitTheUSA
-* Recreation.gov
-* The Dyrt
-* Expatistan
-* GasBuddy
-
-Some sources are disabled due to scraping restrictions (e.g., AllTrails).
+| Source | Category | Level | Status |
+|---|---|---|---|
+| Wikivoyage | activities_attractions | city | ✅ enabled |
+| VisitTheUSA | activities_attractions | city | ✅ enabled |
+| Recreation.gov | activities_attractions | city | ✅ enabled |
+| The Dyrt | activities_attractions | state | ✅ enabled |
+| Expatistan | cost_of_living | city | ✅ enabled |
+| GasBuddy | transport | state | ✅ enabled |
+| TimeOut | activities_attractions | city | ❌ disabled |
+| AllTrails | activities_attractions | state | ❌ disabled (scraping errors) |
+| Numbeo | cost_of_living | city | ❌ disabled |
 
 ---
 
@@ -208,18 +212,20 @@ rag/
 ├── indexing.py
 ├── splitters.py
 ├── structures.py
+├── service.py
 ├── build_rag_index.py
-└── chroma_travel_db/   (generated or extracted)
+└── data/chroma_db/        (generated or extracted)
 ```
 
 ### File Responsibilities
 
-**structures.py** → data models (`TravelDocument`, `TravelSection`)
-**ingestors.py** → scraping + parsing logic for each source
-**splitters.py** → semantic sectioning logic
-**indexing.py** → cleaning, chunking, embedding, batching
-**rag_config.py** → source registry + configuration
-**build_rag_index.py** → orchestrates full pipeline
+**structures.py** → data models (`TravelDocument`, `TravelSection`)  
+**ingestors.py** → scraping + parsing logic for each source  
+**splitters.py** → semantic sectioning logic  
+**indexing.py** → cleaning, chunking, batching (`TravelIndexer`, `TravelTextCleaner`, `LangChainDocumentConverter`)  
+**service.py** → retrieval interface (`TravelRAGService`)  
+**rag_config.py** → source registry + configuration constants  
+**build_rag_index.py** → orchestrates full pipeline  
 
 ---
 
@@ -264,20 +270,14 @@ This creates structured sections instead of naive chunks.
 Sections are converted into LangChain `Document` objects and split using:
 
 ```python
-RecursiveCharacterTextSplitter
+RecursiveCharacterTextSplitter(chunk_size=800, chunk_overlap=120)
 ```
 
 ---
 
 ### 5. Embedding & Indexing
 
-Chunks are embedded using:
-
-```python
-text-embedding-3-small
-```
-
-and stored in Chroma.
+Chunks are embedded using `text-embedding-3-small` and stored in Chroma.
 
 Batching is used to improve stability:
 
@@ -289,14 +289,26 @@ build_index(batch_size=50)
 
 ### 6. Retrieval
 
-The vector DB supports similarity search and can be integrated into a retrieval service or agent pipeline.
+`TravelRAGService` wraps the Chroma vector store and exposes:
+
+* `search()` — similarity search with optional metadata filters (city, state, category, source)
+* `search_with_scores()` — same, with distance scores
+* `retrieve_context()` — convenience method returning a single formatted string ready for an LLM prompt
 
 ---
 
 ## Installation
 
 ```bash
-pip install beautifulsoup4 requests langchain langchain-openai langchain-chroma langchain-text-splitters colorama python-dotenv
+pip install -r requirements.txt
+```
+
+Or manually:
+
+```bash
+pip install langgraph langchain langchain-openai langchain-community langchain-chroma \
+    chromadb openai langsmith beautifulsoup4 requests python-dotenv \
+    tenacity tiktoken colorama streamlit folium streamlit-folium streamlit-js-eval
 ```
 
 ---
@@ -315,32 +327,44 @@ python rag/build_rag_index.py
 
 ```python
 from langchain_chroma import Chroma
+from langchain_openai import OpenAIEmbeddings
 from rag.service import TravelRAGService
+
+embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 
 vector_store = Chroma(
     collection_name="us_travel_rag",
-    persist_directory="./chroma_travel_db",
-    embedding_function=your_embeddings
+    persist_directory="../data/chroma_db/",
+    embedding_function=embeddings,
 )
 
 rag = TravelRAGService(vector_store)
 
-result = rag.search(
+# Or use the convenience constructor:
+rag = TravelRAGService.from_persisted_db()
+
+results = rag.search(
     query="best places to visit",
-    city="New York City"
+    city="New York City",
+    k=5,
 )
+
+# Get a formatted context string for an LLM prompt
+context = rag.retrieve_context(query="things to do in Austin", city="Austin")
 ```
 
 ---
 
 ## Retrieval Layer
 
-The retrieval layer wraps similarity search and returns structured results with metadata such as:
+`TravelRAGService` (`service.py`) connects to the persisted Chroma DB and runs similarity search
+with optional metadata filtering. Results include:
 
-* destination
-* state
-* source
+* destination / state
+* source name
 * category
+* section heading
+* section and parent document IDs
 
 This layer is designed to be used inside a **LangGraph agent node**.
 
@@ -371,7 +395,7 @@ This layer is designed to be used inside a **LangGraph agent node**.
 
 Part of a broader project focused on autonomous AI agents with reasoning, tools, and retrieval.
 
-Hernandez Perez, Josias
+Hernandez Perez, Josias  
 [https://github.com/josiashdezp](https://github.com/josiashdezp)
 
 ---
@@ -384,4 +408,4 @@ The dataset used by this RAG is generated from a structured locations file:
 data/usa_locations.json
 ```
 
-which defines all states and major cities used for ingestion. 
+which defines all states and major cities used for ingestion.
