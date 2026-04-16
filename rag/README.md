@@ -167,7 +167,7 @@ flowchart TD
     I --> J[Retrieval Layer<br>TravelRAGService]
 
     J --> K[LangGraph Agent]
-
+```
 ---
 
 ## Data Sources
